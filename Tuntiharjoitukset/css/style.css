@@ -6,6 +6,11 @@ body {
         color: #ff5733;
         font-size: 2em
     }
+    
+        .Yhteystiedot {
+            text-align: center;
+        }
+    
     h1, h2{
         font-family: Arial, Helvetica, sans-serif;
     }
