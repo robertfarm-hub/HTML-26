@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Kirjaudu tai rekisteröidy</title>
+</head>
+
+<body>
+    <h1>Kirjaudu tai rekisteröidy</h1>
+    <form>
+        <label for="username">Käyttäjänimi:</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+
+        <label for="email">Sähköposti:</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="password">Salasana:</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>
+
+        <label for="password-confirm">Vahvista salasana:</label>
+        <input type="password" id="password-confirm" name="password-confirm" autocomplete="new-password" minlength="8"
+            required>
+
+        <label for="bday">Syntymäpäivä:</label>
+        <input type="date" id="bday" name="bday" autocomplete="bday" required>
+
+        <fieldset>
+            <legend>Käyttöehdot</legend>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">Hyväksyn käyttöehdot</label>
+        </fieldset>
+
+        <button type="submit">Rekisteröidy</button>
+    </form>
+    <br>
+    <h2>Takaisin <a href="index.html">Etusivulle</a></h2>
+</body>
+
+</html>
