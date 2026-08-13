@@ -58,3 +58,7 @@ form input[type="checkbox"] {
 form fieldset label {
     display: inline;
 }
+form input[type="radio"] {
+    width: auto;
+    margin-top: 0;
+}

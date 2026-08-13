@@ -11,7 +11,55 @@
 <body>
     <h1></h1>
     <form>
+        <label for="name">Nimi:</label>
+        <input id="name" name="name" type="text" autocomplete="name" required><br><br>
+        <label for="email">Sähköposti:</label>
+        <input id="email" name="email" type="email" autocomplete="email" required><br><br>
+        <label for="salasana">Salasana:</label>
+        <input id="salasana" name="salasana" type="password" autocomplete="new-password" required><br><br>
+        <label for="ika">Ikä:</label>
+        <input id="ika" name="ika" type="number" min="0">
+        <fieldset>
+            <legend>Sukupuoli</legend>
+            <label><input type="radio" name="sukupuoli" value="mies"> Mies</label>
+            <label><input type="radio" name="sukupuoli" value="nainen"> Nainen</label>
+        </fieldset>
+        <label>
+            <input type="checkbox" name="Uutiskirje"> Tilaa uutiskirje>
+        </label>
+        <label for="viesti">Viesti:</label><br>
+        <textarea id="viesti" name="viesti" rows="4" cols="50" autocomplete="off"
+            placeholder="Kirjoita minulle..."></textarea><br>
+        <label for="Kurssi">Kurssi:</label>
+        <select id="Kurssi" name="Kurssi">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+        </select>
+        <label for="tunnus">Käyttäjätunnus</label>
+        <input id="tunnus" name="tunnus" type="text" minlength="4" maxlength="12" required>
+        <fieldset>
+            <legend>Yhteystiedot</legend>
 
+            <label for="nimi">Nimi</label>
+            <input id="nimi" name="nimi" type="text">
+
+            <label for="email">Sähköposti</label>
+            <input id="email" name="email" type="email">
+        </fieldset>
+        <form action="/laheta" method="post">
+            <label for="nimi">Nimi</label>
+            <input id="nimi" name="nimi" type="text" required>
+
+            <label for="email">Sähköposti</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="viesti">Viesti</label>
+            <textarea id="viesti" name="viesti" required></textarea>
+
+            <button type="submit">Lähetä</button>
+        </form>
+        <br><br>
     </form>
     <br>
     <h2>Takaisin <a href="index.html">Etusivulle</a></h2>
