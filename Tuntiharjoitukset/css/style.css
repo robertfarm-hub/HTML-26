@@ -62,3 +62,41 @@ form input[type="radio"] {
     width: auto;
     margin-top: 0;
 }
+.header_otsikko{
+    display: inline;
+}
+
+header{
+    background-color: #a8a8ff;
+    color: white;
+    padding: 10px;}
+nav, footer{
+    background-color: #6d6de7;
+    color: white;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 10px 10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+aside{
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin-top: 10px;
+}
+footer{
+    text-align: center;
+}
