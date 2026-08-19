@@ -104,3 +104,11 @@ header img {
     height: 60px;
     vertical-align: middle;
 }
+.transkriptio {
+    max-height: 400px;
+    max-width: 600px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    line-height: 1.6;
+}
