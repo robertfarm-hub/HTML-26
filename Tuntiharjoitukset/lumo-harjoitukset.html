@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tämä on harjoitussivu.">
+    <meta name="author" content="Robert Färm">
+    <title>Tervetuloa</title>
+</head>
+
+<body style="background-color: lightblue;">
+    <h1>Tervetuloa</h1>
+    <p>Tämä on minun ensimmäinen HTML-sivuni.</p>
+    <h1>Otsikko 1</h1>
+    <h2>Otsikko 2</h2>
+    <h3>Otsikko 3</h3>
+    <h4>Otsikko 4</h4>
+    <h5>Otsikko 5</h5>
+    <h6>Otsikko 6</h6>
+    <a href="https://www.google.com" target="_blank">Siirry Googleen</a>
+    <img src="images/tdb-logo.jpg" alt="Tiddy B:n logo" width="300">
+    <h1>Listoja</h1>
+    <h2>Mitä haluan oppia HTML:ssä</h2>
+    <ol>
+        <li>Helppokäyttöisyys</li>
+        <li>Viihtyvyys</li>
+        <li>Hyödyllisyys</li>
+    </ol>
+    <h2>Lempiruoka</h2>
+    <ul>
+        <li>Pizza</li>
+        <li>Hampurilainen</li>
+        <li>Sushi</li>
+        <li>Pihvi</li>
+    </ul>
+    <table border="1">
+        <tr>
+            <th>Nimi</th>
+            <th>Ikä</th>
+        </tr>
+        <tr>
+            <td>Robert</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>Jusu</td>
+            <td>33</td>
+        </tr>
+    </table>
+    <a href="https://lumoakatemia.eu/index.php?option=com_splms&view=lesson&id=130:html-harjoituksia&Itemid=101">
+        <img src="images/kissa.jpg" alt="Harjoitus-sivulle tästä" width="200">
+    </a>
+    <form>
+        <label for="nimi">Nimi:</label>
+        <input type="text" id="nimi" name="nimi">
+        <input type="submit" value="Lähetä">
+    </form>
+    <form>
+        <label for="palaute">Anna palautetta:</label>
+        <textarea id="palaute" name="palaute" rows="4" cols="50"></textarea>
+        <input type="submit" value="Lähetä">
+    </form>
+    <form>
+        <label><input type="radio" name="sukupuoli" value="mies"> Mies</label>
+        <label><input type="radio" name="sukupuoli" value="nainen"> Nainen</label>
+        <label><input type="radio" name="sukupuoli" value="muu"> Muu</label>
+    </form>
+    <form>
+        <label><input type="checkbox" name="harrastus" value="lukeminen"> Lukeminen</label>
+        <label><input type="checkbox" name="harrastus" value="urheilu"> Urheilu</label>
+        <label><input type="checkbox" name="harrastus" value="musiikki"> Musiikki</label>
+    </form>
+    <form>
+        <label for="vari">Valitse suosikkivärisi:</label>
+        <select id="vari" name="vari">
+            <option value="punainen">Punainen</option>
+            <option value="sininen">Sininen</option>
+            <option value="vihreä">Vihreä</option>
+        </select>
+    </form>
+    <ul>
+        <li>Hedelmät
+            <ul>
+                <li>Omena</li>
+                <li>Banaani</li>
+                <li>Appelsiini</li>
+                <li>Greippi</li>
+            </ul>
+        </li>
+        <li>Vihannekset
+            <ul>
+                <li>Porkkana</li>
+                <li>Kurkku</li>
+                <li>Tomaatti</li>
+                <li>Paprika</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Tämä on kommentti, joka ei näy selaimessa -->
+    <p style="font-family: Arial;">Tämä on Arial-fontilla</p>
+    <div style="border: 1px solid black; padding: 10px;">
+        <h2>Div-elementin otsikko</h2>
+        <p>Div-elementin sisällä oleva teksti.</p>
+    </div>
+    <p>Tämä on <span style="color: rgb(4, 0, 255);">sininen</span> sana.</p>
+    <header>
+        <h1>Tervetuloa!</h1>
+    </header>
+    <section>
+        <p>Tähän tulee sisältö</p>
+    </section>
+    <video width="400" controls>
+        <source src="videos/ankkavideo.mp4" type="video/mp4">
+        Selaimesi ei tue videoelementtiä.
+    </video>
+    <audio controls>
+        <source src="music/lyonti-aani.mp3" type="audio/mpeg">
+        Selaimesi ei tue audiotiedostoja.
+    </audio>
+    <form>
+        <label for="email">Sähköposti:</label>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Lähetä">
+    </form>
+    <iframe src="https://www.youtube.com/embed/watch?v=ewZx0bnBb30" width="600" height="400"></iframe>
+    <iframe data-testid="embed-iframe" style="border-radius:12px"
+        src="https://open.spotify.com/embed/artist/1VgwrLDy2Nte8B5g5nhcqi?utm_source=generator&si=5e61f4a9a4d446a0"
+        width="50%" height="400" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+    <button onclick="alert('Painoit..')">Älä paina tästä</button>
+    <p style="color: blue; font-size: 20px;">Voi pyhä toisto</p>
+    <a href="https://open.spotify.com/artist/1VgwrLDy2Nte8B5g5nhcqi" target="_blank" rel="noopener noreferrer">Avaa uusi
+        välilehti</a>
+    <h1>Takaisin <a href="index.html">Etusivulle</a></h1>
+    <footer>
+        <p>&copy; 2026 Robert Färm</p>
+    </footer>
+</body>
+
+</html>
