@@ -116,3 +116,10 @@ header img {
     max-width: 50%;
     height: auto;
 }
+.hero-img {
+    display: block;
+    width: 100%;
+    max-width: 474px;
+    height: auto;
+    margin: 0 auto;
+}
