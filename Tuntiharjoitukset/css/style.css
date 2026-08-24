@@ -70,17 +70,30 @@ header{
     background-color: #a8a8ff;
     color: white;
     padding: 10px;}
-nav, footer{
+nav {
     background-color: #6d6de7;
     color: white;
     padding: 10px;
+    overflow-x: auto;
 }
-nav ul{
+
+nav ul {
     display: flex;
     list-style-type: none;
     gap: 10px;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
+}
+
+nav li {
+    flex-shrink: 0;
+}
+footer{
+    background-color: #6d6de7;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 p{
     margin: 10px 10px;
@@ -122,8 +135,4 @@ header img {
     max-width: 474px;
     height: auto;
     margin: 0 auto;
-}
-.logo {
-    max-width: 50%;
-    height: auto;
 }
