@@ -26,8 +26,8 @@ https://robertfarm-hub.github.io/HTML-26/Rakenneharjoitus/
 
 ## Semanttiset valinnat
 
-Käytin <ol> tehdessäni Top 10 listan ja <ul> navigaatioon.
-Lähdeviittaus <blockquote>n ulkopuolella, koska itse lähteen mainitseminen on omia sanojani.
+Käytin `<ol>` tehdessäni Top 10 listan ja `<ul>` navigaatioon.
+Lähdeviittaus `<blockquote>`n ulkopuolella, koska itse lähteen mainitseminen on omia sanojani.
 lang="en" Wikipedia-lainauksessa. Ilman merkintää ruudunlukija ääntäisi englannin suomalaisittain.
 Mainittu se että yksikään Messistä löytämäni video ei hyväksynyt upotusta.
 
