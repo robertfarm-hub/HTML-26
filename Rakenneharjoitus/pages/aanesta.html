@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maailman parhaat jalkapalloilijat - Äänestä</title>
+</head>
+
+<body>
+    <header>
+        <h1>Äänestä</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Etusivu</a></li>
+                <li><a href="ronaldo.html">Ronaldo</a></li>
+                <li><a href="messi.html">Messi</a></li>
+                <li><a href="maradona.html">Maradona</a></li>
+                <li><a href="vertailu.html">Vertailu</a></li>
+                <li><a href="aanesta.html" aria-current="page">Äänestä</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <!--lisätty pieni maininta siitä ettei tiedonlähetys toimi-->
+    <main>
+        <section>
+            <h2>Kuka on sinun mielestäsi G.O.A.T.?</h2>
+            <p>Olet lukenut kolme perustelua. Nyt on sinun vuorosi!</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Äänestäjän tiedot</legend>
+
+                    <p>
+                        <label for="nimi">Nimi tai nimimerkki</label>
+                        <input type="text" id="nimi" name="nimi" maxlength="40" required
+                            placeholder="Esim. Mara86">
+                    </p>
+
+                    <p>
+                        <label for="sposti">Sähköpostiosoite</label>
+                        <input type="email" id="sposti" name="sposti" required placeholder="nimi@example.com">
+                    </p>
+
+                    <p>
+                        <label for="puhelin">Puhelinnumero (vapaaehtoinen)</label>
+                        <input type="tel" id="puhelin" name="puhelin" placeholder="040 1234567">
+                    </p>
+
+                    <p>
+                        <label for="ika">Ikä</label>
+                        <input type="number" id="ika" name="ika" min="5" max="120" placeholder="Esim. 17">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Äänesi</legend>
+
+                    <p>
+                        <input type="radio" id="aani-maradona" name="goat" value="maradona" required>
+                        <label for="aani-maradona">Diego Maradona</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="aani-ronaldo" name="goat" value="ronaldo">
+                        <label for="aani-ronaldo">Cristiano Ronaldo</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="aani-messi" name="goat" value="messi">
+                        <label for="aani-messi">Lionel Messi</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="aani-muu" name="goat" value="muu">
+                        <label for="aani-muu">Joku muu</label>
+                    </p>
+
+                    <p>
+                        <label for="kriteeri">Mikä ratkaisee eniten?</label>
+                        <select id="kriteeri" name="kriteeri">
+                            <option value="maalit">Maalimäärä</option>
+                            <option value="palkinnot">Yksilöpalkinnot</option>
+                            <option value="mm">MM-menestys</option>
+                            <option value="vaikutus" selected>Vaikutus joukkueeseen</option>
+                            <option value="tekniikka">Tekninen taito</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="perustelu">Perustele valintasi</label><br>
+                        <textarea id="perustelu" name="perustelu" rows="6" cols="40" maxlength="500"
+                            placeholder="Kerro omin sanoin, mikä vaikutti valintaan."></textarea>
+                    </p>
+
+                    <p>
+                        <label for="paiva">Äänestyspäivä</label>
+                        <input type="date" id="paiva" name="paiva">
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="tulokset" name="tulokset" value="kylla" checked>
+                        <label for="tulokset">Haluan tuloksen sähköpostiini</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Lähetä ääni</button>
+                    <button type="reset">Tyhjennä lomake</button>
+                </p>
+            </form>
+            <p><small>Huom! Tämä on harjoitustehtävä, etkä siis todellisuudessa jaa tietojasi.</small></p>
+        </section>
+        <hr>
+        <section>
+            <h2>Yhteystiedot</h2>
+            <address>
+                <p>Sivuston ylläpitäjä: Robert Färm</p>
+                <p>Kysy lisää sähköpostitse:
+                    <a href="mailto:setaroope@gmail.com">setaroope@gmail.com</a>
+                </p>
+            </address>
+        </section>
+    </main>
+    <hr>
+    <footer>© Robert Färm 2026</footer>
+</body>
+
+</html>
