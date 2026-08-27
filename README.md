@@ -7,6 +7,7 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 - **[Rakenneharjoitus](Rakenneharjoitus/)** – Monisivuinen verkkosivusto ilman CSS:ää.
   Aiheena jalkapallon GOAT-keskustelu.
 - **[Tuntiharjoitukset](Tuntiharjoitukset/)** – Kurssin aikana tehdyt pienemmät harjoitukset.
+- **[Omat-projektit](Omat-projektit/)** – Itsenäisesti tehdyt omat projektit ja harjoitukset.
 
 ## Julkaistu versio
 
