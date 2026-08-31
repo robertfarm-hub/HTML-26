@@ -8,6 +8,7 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
   Aiheena jalkapallon GOAT-keskustelu.
 - **[Tuntiharjoitukset](Tuntiharjoitukset/)** – Kurssin aikana tehdyt pienemmät harjoitukset.
 - **[Omat-projektit](Omat-projektit/)** – Itsenäisesti tehdyt omat projektit ja harjoitukset.
+- **[Taulukkoharjoitus](Taulukkoharjoitus/)** – Osa 11 harjoitukset
 
 ## Julkaistu versio
 
