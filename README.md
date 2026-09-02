@@ -10,7 +10,6 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 - **[Taulukkoharjoitus](Taulukkoharjoitus/)** – Osa 11 harjoitukset.
 - **[Osa 12](Osa-12/)** – Diasarjan osan 12 harjoitukset.
 - **[Pasi-Anssi](pasi-anssi/)** – Pasi-Anssi-sivustoharjoitus.
-
 - **[Omat-projektit](Omat-projektit/)** – Itsenäisesti tehdyt omat projektit ja harjoitukset. (TYHJÄ)
 
 ## Julkaistu versio
