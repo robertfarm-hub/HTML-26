@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Canvas-elementti</title>
+</head>
+
+<body>
+    <h1>Canvas-elementti</h1>
+    <canvas id="piirtoalue" width="500" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById("piirtoalue");
+        const ctx = canvas.getContext("2d");
+        let x = 50;
+        let y = 150;
+        let nopeusX = 3;
+        function animaatio() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (x + 50 >= canvas.width) {
+                nopeusX = -nopeusX;
+            }
+            if (x <= 0) {
+                nopeusX = -nopeusX;
+            }
+            x = x + nopeusX;
+            ctx.fillStyle = "red";
+            ctx.fillRect(x, y, 50, 50);
+            requestAnimationFrame(animaatio);
+        }
+        animaatio();
+
+    </script>
+    <canvas id="piirtoalue2" width="500" height="400"></canvas>
+    <script>
+        const canvas2 = document.getElementById("piirtoalue2");
+        const ctx2 = canvas2.getContext("2d");
+        console.log(ctx2);
+        ctx2.fillStyle = "orange";
+        ctx2.fillRect(30, 30, 120, 90);
+    </script>
+
+</body>
+
+</html>
