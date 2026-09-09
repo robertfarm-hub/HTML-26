@@ -10,10 +10,23 @@
 
 <body>
     <h1>Canvas-elementti</h1>
-    <canvas id="piirtoalue" width="500" height="400"></canvas>
+    <canvas id="piirtoalue" width="500" height="400"
+    aria-label="Punainen liikkuva suorakulmio piirtoalueella"
+    role="img">
+</canvas>
     <script>
+
         const canvas = document.getElementById("piirtoalue");
+        console.log("Canvas", canvas);
         const ctx = canvas.getContext("2d");
+        console.log("Konteksti", ctx);
+        if (!ctx) {
+            console.log("Virhe: Kontekstia ei saatu!");
+        } else {
+            ctx.fillStyle = "red";
+            ctx.fillRect(50, 50, 100, 80);
+        }
+
         let x = 50;
         let y = 150;
         let nopeusX = 3;
