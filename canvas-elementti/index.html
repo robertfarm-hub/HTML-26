@@ -6,55 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Canvas-elementti</title>
+    <meta name="description" content="Canvas-elementti">
+    <link rel="canonical" href="https://robertfarm-hub.github.io/HTML-26/canvas-elementti/index.html">
+    <link rel="icon" type="image/x-icon" href="images/tdb-favicon.png">
+    <meta property="og:title" content="Canvas-elementti">
+    <meta propetry="og:description" content="Canvas-elementti-harjoituksen etusivu">
+    <meta property="og:image" content="images/tdb-logo.png">
 </head>
 
 <body>
-    <h1>Canvas-elementti</h1>
-    <canvas id="piirtoalue" width="500" height="400"
-    aria-label="Punainen liikkuva suorakulmio piirtoalueella"
-    role="img">
-</canvas>
-    <script>
+    <header>
+        <h1>Canvas-elementti</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-current="page">Etusivu</a></li>
+                <li><a href="pages/piirto-ohjelma.html">Piirto-ohjelma</a></li>
+        </nav>
+    </header>
+    <main>
+        <canvas id="piirtoalue" width="500" height="400" aria-label="Punainen liikkuva suorakulmio piirtoalueella"
+            role="img">
+        </canvas>
+        <script>
 
-        const canvas = document.getElementById("piirtoalue");
-        console.log("Canvas", canvas);
-        const ctx = canvas.getContext("2d");
-        console.log("Konteksti", ctx);
-        if (!ctx) {
-            console.log("Virhe: Kontekstia ei saatu!");
-        } else {
-            ctx.fillStyle = "red";
-            ctx.fillRect(50, 50, 100, 80);
-        }
-
-        let x = 50;
-        let y = 150;
-        let nopeusX = 3;
-        function animaatio() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (x + 50 >= canvas.width) {
-                nopeusX = -nopeusX;
+            const canvas = document.getElementById("piirtoalue");
+            console.log("Canvas", canvas);
+            const ctx = canvas.getContext("2d");
+            console.log("Konteksti", ctx);
+            if (!ctx) {
+                console.log("Virhe: Kontekstia ei saatu!");
+            } else {
+                ctx.fillStyle = "red";
+                ctx.fillRect(50, 50, 100, 80);
             }
-            if (x <= 0) {
-                nopeusX = -nopeusX;
+
+            let x = 50;
+            let y = 150;
+            let nopeusX = 3;
+            function animaatio() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                if (x + 50 >= canvas.width) {
+                    nopeusX = -nopeusX;
+                }
+                if (x <= 0) {
+                    nopeusX = -nopeusX;
+                }
+                x = x + nopeusX;
+                ctx.fillStyle = "red";
+                ctx.fillRect(x, y, 50, 50);
+                requestAnimationFrame(animaatio);
             }
-            x = x + nopeusX;
-            ctx.fillStyle = "red";
-            ctx.fillRect(x, y, 50, 50);
-            requestAnimationFrame(animaatio);
-        }
-        animaatio();
+            animaatio();
 
-    </script>
-    <canvas id="piirtoalue2" width="500" height="400"></canvas>
-    <script>
-        const canvas2 = document.getElementById("piirtoalue2");
-        const ctx2 = canvas2.getContext("2d");
-        console.log(ctx2);
-        ctx2.fillStyle = "orange";
-        ctx2.fillRect(30, 30, 120, 90);
-    </script>
-
+        </script>
+        <canvas id="piirtoalue2" width="500" height="400"></canvas>
+        <script>
+            const canvas2 = document.getElementById("piirtoalue2");
+            const ctx2 = canvas2.getContext("2d");
+            console.log(ctx2);
+            ctx2.fillStyle = "orange";
+            ctx2.fillRect(30, 30, 120, 90);
+        </script>
+</main>
+<footer>&copy; Robert Färm 2026</footer>
 </body>
 
 </html>

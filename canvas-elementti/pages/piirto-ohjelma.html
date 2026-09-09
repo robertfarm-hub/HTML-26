@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Piirto-ohjelma</title>
+    <meta name="description" content="Canvas-elementti - Piirto-ohjelma">
+    <link rel="canonical" href="https://robertfarm-hub.github.io/HTML-26/canvas-elementti/index.html">
+    <link rel="icon" type="image/x-icon" href="../images/tdb-favicon.png">
+    <meta property="og:title" content="Canvas-elementti - Piirto-ohjelma">
+    <meta propetry="og:description" content="canvas-elementti-tehtäväkokonaisuuden piirto-ohjelma-harjoitus.">
+    <meta property="og:image" content="../images/tdb-logo.png">
+</head>
+
+<body>
+    <header>
+        <h1>Canvas-elementti</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Etusivu</a></li>
+                <li><a href="piirto-ohjelma.html" aria-current="page">Piirto-ohjelma</a></li>
+        </nav>
+    </header>
+    <main>
+        <canvas id="piirto-ohjelma" width="500" height="400" aria-label="Piirto-ohjelma canvas-elementillä" role="img">
+        </canvas>
+        <script>
+            const canvas = document.getElementById("piirto-ohjelma");
+            console.log("Canvas", canvas);
+            const ctx = canvas.getContext("2d");
+            console.log("Konteksti", ctx);
+            if (!ctx) {
+                console.log("Virhe: Kontekstia ei saatu!");
+            }
+            let piirretään = false; 
+            let edellinenX, edellinenY;
+            let nykyinenVari = "black";
+
+        </script>
+    </main>
+</body>
+
+</html>
