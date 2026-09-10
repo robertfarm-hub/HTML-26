@@ -4,6 +4,7 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 
 ## Sisältö
 
+- **[ODFM-Sivusto](odfm-sivusto/)** – Musiikkijulkaisun tueksi tehty bändisivusto. (KESKEN)
 - **[Rakenneharjoitus](Rakenneharjoitus/)** – Monisivuinen verkkosivusto ilman CSS:ää.
   Aiheena jalkapallon GOAT-keskustelu.
 - **[Tuntiharjoitukset](Tuntiharjoitukset/)** – Kurssin aikana tehdyt pienemmät harjoitukset.
