@@ -5,9 +5,9 @@ Tehdään kertausharjoitusten lopussa olevaan tehtävään sivusto, jonka julkai
 # Kansiorakenne
 
 odfm-sivusto/  
-├── index.html  
+├── index.html
 ├── pages/ 
-    └──  yhteystiedot.html  
+    └──  yhteystiedot.html  (TEKEMÄTTÄ)
 ├── images/
     └──  muistilappu.png
     └──  odfm-favicon-dark.png
