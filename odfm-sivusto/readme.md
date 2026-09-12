@@ -4,10 +4,17 @@ Tehdään kertausharjoitusten lopussa olevaan tehtävään sivusto, jonka julkai
 
 # Kansiorakenne
 
+<<<<<<< HEAD
 odfm-sivusto/
 ├── index.html
  ├── pages/
    └── yhteystiedot.html (TEKEMÄTTÄ) 
+=======
+odfm-sivusto/  
+├── index.html
+├── pages/ 
+    └──  yhteystiedot.html  (TEKEMÄTTÄ)
+>>>>>>> ba5e4d05033f854ea12e65c2ab587ae27c141bcd
 ├── images/
   └── muistilappu.png
   └── odfm-favicon-dark.png
