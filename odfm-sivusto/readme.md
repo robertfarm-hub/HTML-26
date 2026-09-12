@@ -4,18 +4,18 @@ Tehdään kertausharjoitusten lopussa olevaan tehtävään sivusto, jonka julkai
 
 # Kansiorakenne
 
-odfm-sivusto/  
-├── index.html  
-├── pages/ 
-    └──  yhteystiedot.html  
+odfm-sivusto/
+├── index.html
+ ├── pages/
+   └── yhteystiedot.html (TEKEMÄTTÄ) 
 ├── images/
-    └──  muistilappu.png
-    └──  odfm-favicon-dark.png
-    └──  odfm-favicon.png
-    └──  odfm-og.png
-    └──  patsas.webp
-├── css/
-    └──  style.css
+  └── muistilappu.png
+  └── odfm-favicon-dark.png
+  └── odfm-favicon.png 
+  └── odfm-og.png 
+  └── patsas.webp 
+├── css/ 
+  └── style.css 
 ├── readme.md
 
 ## Tekijä
