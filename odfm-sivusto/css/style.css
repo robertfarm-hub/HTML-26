@@ -3,7 +3,7 @@
     --vari-tumma: #12161C;
     --vari-teksti: #1A1A1A;
     --vari-teksti-tumma: #E8E8E8;
-
+    --vari-pohja: #0C0F14;
     --fontti-otsikko: "Archivo Black", Impact, sans-serif;
     --fontti-teksti: "Inter", system-ui, sans-serif;
 }
@@ -68,7 +68,7 @@ a {
 .hero {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 11vh;
+    padding-bottom: 8vh;
     background: linear-gradient(to bottom,
             var(--vari-taivas) 0%,
             var(--vari-taivas) 45%,
@@ -189,7 +189,7 @@ main {
 .sahkoposti {
     margin: 0;
     font-family: var(--fontti-otsikko);
-    font-size: clamp(1.25rem, 5vw, 2.5rem);
+    font-size: clamp(1.1rem, 4vw, 1.75rem);
     letter-spacing: 0.05em;
 }
 
@@ -231,4 +231,41 @@ main {
 .some-kolmio img {
     width: 140px;
     height: auto;
+}
+.sivunavigaatio {
+    background: var(--vari-pohja);
+    color: var(--vari-teksti-tumma);
+    border-top: 1px solid rgba(232, 232, 232, 0.15);
+}
+
+.sivunavigaatio ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 2rem 1.5rem;
+    list-style: none;
+}
+
+.sivunavigaatio a {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.sivunavigaatio a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.4em;
+}
+
+footer {
+    background: var(--vari-pohja);
+    color: var(--vari-teksti-tumma);
+    padding: 0 1.5rem 1.25rem;
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
 }
