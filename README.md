@@ -4,7 +4,7 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 
 ## Sisältö
 
-- **[ODFM-Sivusto](odfm-sivusto/)** – Musiikkijulkaisun tueksi tehty bändisivusto. (KESKEN)
+
 - **[Rakenneharjoitus](Rakenneharjoitus/)** – Monisivuinen verkkosivusto ilman CSS:ää.
   Aiheena jalkapallon GOAT-keskustelu.
 - **[Tuntiharjoitukset](Tuntiharjoitukset/)** – Kurssin aikana tehdyt pienemmät harjoitukset.
@@ -12,7 +12,10 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 - **[Osa 12](Osa-12/)** – Diasarjan osan 12 harjoitukset.
 - **[Pasi-Anssi](pasi-anssi/)** – Pasi-Anssi-sivustoharjoitus.
 - **[Canvas-elementti](canvas-elementti/)** – JavaScriptin harjoittelua canvas-elementin parissa.
-- **[Omat-projektit](Omat-projektit/)** – Itsenäisesti tehdyt omat projektit ja harjoitukset. (TYHJÄ)
+
+## Omat projektit:
+
+- **[ODFM-Sivusto](odfm-sivusto/)** – Musiikkijulkaisun tueksi tehty bändisivusto. (KESKEN)
 
 ## Julkaistu versio
 
