@@ -2,7 +2,7 @@
 
 Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 
-## Sisältö
+## Harjoitukset
 
 
 - **[Rakenneharjoitus](Rakenneharjoitus/)** – Monisivuinen verkkosivusto ilman CSS:ää.
