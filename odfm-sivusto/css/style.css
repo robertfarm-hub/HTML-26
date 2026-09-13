@@ -125,13 +125,13 @@ a {
 .hero-nav {
     position: absolute;
     bottom: 8%;
-    left: 46%;
+    left: 37%;
     transform: translateX(min(9rem, 22vw)) rotate(20deg);
     z-index: 2;
 }
 
 .hero-nav img {
-    width: 80px;
+    width: 90px;
     height: auto;
 }
 
