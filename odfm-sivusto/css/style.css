@@ -124,9 +124,9 @@ a {
 
 .hero-nav {
     position: absolute;
-    bottom: 8%;
-    left: 37%;
-    transform: translateX(min(9rem, 22vw)) rotate(20deg);
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%) rotate(20deg);
     z-index: 2;
 }
 
