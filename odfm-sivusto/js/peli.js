@@ -2,6 +2,7 @@ const kentta = document.getElementById("kentta");
 const pelaaja = document.getElementById("pelaaja");
 const luukku = document.getElementById("luukku");
 const pimeys = document.getElementById("pimeys");
+const valo = document.getElementById("valo");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
@@ -185,6 +186,9 @@ function paivita(aika) {
     pimeys.style.setProperty("--lx", valoX + "%");
     pimeys.style.setProperty("--ly", valoY + "%");
     pimeys.style.setProperty("--sade", sade + "px");
+    valo.style.setProperty("--lx", valoX + "%");
+    valo.style.setProperty("--ly", valoY + "%");
+    valo.style.setProperty("--sade", sade + "px");
     requestAnimationFrame(paivita);
 }
 

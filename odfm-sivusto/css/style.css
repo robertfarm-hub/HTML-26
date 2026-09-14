@@ -346,23 +346,36 @@ footer {
     background: var(--vari-taivas);
 }
 
-.pimeys {
+.valo {
     position: absolute;
     inset: 0;
     z-index: 5;
     pointer-events: none;
     opacity: 0;
+    mix-blend-mode: multiply;
     background: radial-gradient(circle var(--sade, 100px) at var(--lx, 50%) var(--ly, 50%),
-            rgba(232, 162, 74, 0.34) 0%,
-            rgba(232, 162, 74, 0.26) 22%,
-            rgba(160, 100, 40, 0.42) 44%,
-            rgba(60, 38, 18, 0.72) 62%,
-            rgba(24, 20, 20, 0.90) 78%,
-            rgba(8, 9, 12, 0.98) 90%,
-            #05070A 100%);
+            #F0B060 0%,
+            #C98A45 40%,
+            #4A3A28 70%,
+            #1A1A1C 88%,
+            #0A0A0C 100%);
 }
 
-body.peli-kaynnissa .pimeys {
+.pimeys {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(circle var(--sade, 100px) at var(--lx, 50%) var(--ly, 50%),
+            rgba(18, 22, 28, 0) 0%,
+            rgba(18, 22, 28, 0) 70%,
+            rgba(18, 22, 28, 0.7) 85%,
+            var(--vari-tumma) 100%);
+}
+
+body.peli-kaynnissa .pimeys,
+body.peli-kaynnissa .valo {
     opacity: 1;
 }
 
