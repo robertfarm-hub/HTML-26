@@ -3,19 +3,43 @@ const pelaaja = document.getElementById("pelaaja");
 const luukku = document.getElementById("luukku");
 
 const NOPEUS = 0.4;
+const PUTOAMISNOPEUS = 2.5;
 const RUUTUVALI = 180;
-const LUUKKU_KESKI = 88;
 const LUUKKU_LEVEYS = 12;
+const LATTIA = 9.4;
 
+const KENTAT = [
+    { kuva: "kentta-0.png", luukku: 88 },
+    { kuva: "kentta-0.png", luukku: 12 },
+    { kuva: "kentta-0.png", luukku: 88 },
+    { kuva: "kentta-0.png", luukku: null }
+];
+
+let kerros = 0;
 let x = 50;
+let y = 0;
 let suunta = 0;
 let katse = 1;
+let putoaa = false;
+let vaihdettu = false;
 let pelialkanut = false;
 let ruutu = 0;
 let viimeVaihto = 0;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
+}
+
+function lataaKerros(numero) {
+    const tiedot = KENTAT[numero];
+    kentta.style.backgroundImage = 'url("../images/' + tiedot.kuva + '")';
+
+    if (tiedot.luukku === null) {
+        luukku.style.display = "none";
+    } else {
+        luukku.style.display = "block";
+        luukku.style.left = tiedot.luukku + "%";
+    }
 }
 
 document.addEventListener("keydown", (tapahtuma) => {
@@ -38,42 +62,61 @@ window.addEventListener("pointerup", () => {
 });
 
 function paivita(aika) {
-    if (suunta !== 0) {
-        if (!pelialkanut) {
-            pelialkanut = true;
+    if (putoaa) {
+        y = y - PUTOAMISNOPEUS;
+
+        if (!vaihdettu && y < -120) {
+            vaihdettu = true;
+            kerros = kerros + 1;
+            lataaKerros(kerros);
+            y = 120;
+        }
+
+        if (vaihdettu && y <= 0) {
+            y = 0;
+            putoaa = false;
+            vaihdettu = false;
+            vaihdaKuva("dante-lyhty-a");
+        }
+    } else {
+        if (suunta !== 0) {
+            if (!pelialkanut) {
+                pelialkanut = true;
+                vaihdaKuva("dante-lyhty-a");
+            }
+
+            katse = suunta;
+
+            if (aika - viimeVaihto > RUUTUVALI) {
+                viimeVaihto = aika;
+                ruutu = 1 - ruutu;
+                vaihdaKuva(ruutu === 0 ? "dante-lyhty-a" : "dante-lyhty-b");
+            }
+        } else if (pelialkanut && ruutu !== 0) {
+            ruutu = 0;
             vaihdaKuva("dante-lyhty-a");
         }
 
-        katse = suunta;
+        x = x + suunta * NOPEUS;
 
-        if (aika - viimeVaihto > RUUTUVALI) {
-            viimeVaihto = aika;
-            ruutu = 1 - ruutu;
-            vaihdaKuva(ruutu === 0 ? "dante-lyhty-a" : "dante-lyhty-b");
+        if (x < 4.7) x = 4.7;
+        if (x > 95.3) x = 95.3;
+
+        const kohde = KENTAT[kerros].luukku;
+
+        if (pelialkanut && kohde !== null && Math.abs(x - kohde) < LUUKKU_LEVEYS / 2) {
+            putoaa = true;
+            suunta = 0;
+            vaihdaKuva("dante-lyhty-putoaa");
         }
-    } else if (pelialkanut && ruutu !== 0) {
-        ruutu = 0;
-        vaihdaKuva("dante-lyhty-a");
-    }
-
-    x = x + suunta * NOPEUS;
-
-    if (x < 4.7) x = 4.7;
-    if (x > 95.3) x = 95.3;
-
-    const luukunAlku = LUUKKU_KESKI - LUUKKU_LEVEYS / 2;
-    const luukunLoppu = LUUKKU_KESKI + LUUKKU_LEVEYS / 2;
-
-    if (x > luukunAlku && x < luukunLoppu) {
-        luukku.style.background = "#7A3B1F";
-    } else {
-        luukku.style.background = "var(--vari-taivas)";
     }
 
     pelaaja.style.left = x + "%";
+    pelaaja.style.bottom = (LATTIA + y) + "%";
     pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
 
     requestAnimationFrame(paivita);
 }
 
+lataaKerros(0);
 requestAnimationFrame(paivita);
