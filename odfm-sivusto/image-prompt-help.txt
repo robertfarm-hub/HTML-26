@@ -1,0 +1,15 @@
+Wide panoramic horizontal band, side-scrolling video game background, aspect ratio exactly 4:1. Flat graphic illustration, hard edges, no photorealism, no texture, no rendering detail, no gradients.
+
+Exactly three tones, nothing else: pale blue-grey background (#BCC6D0), mid-grey shapes (#5A6673) for everything in the scene, and near-black (#12161C) only for the ground strip. Use only ONE single flat mid-grey for every shape in the scene — do not vary the tone between objects, do not use lighter or darker greys for depth. Never use near-black for scenery or figures. No warm tones anywhere: no amber, orange, red or brown. Even flat ambient light only: no light sources, no highlights, no cast shadows, no glow, no fog, no atmospheric depth.
+
+Composition rules, all measured from the full image:
+— A flat horizontal ground line sits at 8% up from the bottom edge. Everything below it is a plain unbroken solid near-black strip across the full width, with nothing on it, no openings, no steps and no objects. The ground strip must be thin — no thicker than 10% of the image height.
+— Scenery is drawn in mid-grey and may fill the full height of the image above the ground line.
+— Use FEW and LARGE shapes: no more than eight distinct elements in total, each at least 1/15th of the image width.
+— Absolutely no fine detail, no small scattered particles, no thin lines, no textures, no crowds of individually drawn small figures. The image will be reduced to 640 pixels wide and anything small will turn to noise.
+
+No text, no borders, no frame, no UI elements, no characters in the foreground.
+
+Scene: A series of enormous concentric stone ditches cut into the ground, seen from the side, each one spanned by a single massive arched stone bridge. The ditches are deep and dark.
+
+On the right-hand side stands one colossal horned figure. It is by far the largest shape in the image: its feet rest on the ground line and its horns nearly touch the top edge of the image, so it spans almost the full height. Its head is thrown far back, its mouth wide open, and its arms are flung out wide in a posture of open mockery and laughter. The rest of the scene is small beside it.
