@@ -55,8 +55,8 @@ function paivita(aika) {
 
     x = x + suunta * NOPEUS;
 
-    if (x < 4.3) x = 4.3;
-    if (x > 95.7) x = 95.7;
+    if (x < 4.7) x = 4.7;
+    if (x > 95.3) x = 95.3;
 
     pelaaja.style.left = x + "%";
     pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
