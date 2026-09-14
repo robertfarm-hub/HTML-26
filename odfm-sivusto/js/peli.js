@@ -42,6 +42,20 @@ function lataaKerros(numero) {
     }
 }
 
+function esilataa() {
+    const kuvat = ["dante", "dante-lyhty-a", "dante-lyhty-b", "dante-lyhty-putoaa"];
+
+    for (const nimi of kuvat) {
+        const kuva = new Image();
+        kuva.src = "../images/" + nimi + ".png";
+    }
+
+    for (const tiedot of KENTAT) {
+        const kuva = new Image();
+        kuva.src = "../images/" + tiedot.kuva;
+    }
+}
+
 document.addEventListener("keydown", (tapahtuma) => {
     if (tapahtuma.key === "ArrowLeft") suunta = -1;
     if (tapahtuma.key === "ArrowRight") suunta = 1;
@@ -118,5 +132,6 @@ function paivita(aika) {
     requestAnimationFrame(paivita);
 }
 
+esilataa();
 lataaKerros(0);
 requestAnimationFrame(paivita);
