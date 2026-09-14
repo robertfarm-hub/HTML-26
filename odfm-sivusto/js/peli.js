@@ -9,7 +9,7 @@ const LUUKKU_LEVEYS = 12;
 
 const KENTAT = [
     { kuva: "kentta-0.png", luukku: 88, lattia: 9.4 },
-    { kuva: "kentta-1.png", luukku: 12, lattia: 18.8 }
+    { kuva: "kentta-1.png", luukku: 12, lattia: 18.8 },
     { kuva: "kentta-2.png", luukku: 88, lattia: 14.4 }
 ];
 
