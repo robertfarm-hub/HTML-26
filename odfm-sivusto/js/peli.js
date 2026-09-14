@@ -115,3 +115,49 @@ function paivita(aika) {
                 pelialkanut = true;
                 vaihdaKuva("dante-lyhty-a");
             }
+
+            katse = suunta;
+
+            if (aika - viimeVaihto > RUUTUVALI) {
+                viimeVaihto = aika;
+                ruutu = 1 - ruutu;
+                vaihdaKuva(ruutu === 0 ? "dante-lyhty-a" : "dante-lyhty-b");
+            }
+        } else if (pelialkanut && ruutu !== 0) {
+            ruutu = 0;
+            vaihdaKuva("dante-lyhty-a");
+        }
+
+        x = x + suunta * NOPEUS;
+
+        if (x < 4.7) x = 4.7;
+        if (x > 95.3) x = 95.3;
+
+        const tiedot = KENTAT[kerros];
+        const luukulla = tiedot.luukku !== null
+            && Math.abs(x - luukunPaikka) < LUUKKU_LEVEYS / 2;
+
+        if (luukulla && pelialkanut) {
+            if (tiedot.karkaa !== undefined && !karannut) {
+                karannut = true;
+                luukunPaikka = tiedot.karkaa;
+                luukku.style.transition = "left 0.35s";
+                luukku.style.left = luukunPaikka + "%";
+            } else {
+                putoaa = true;
+                suunta = 0;
+                vaihdaKuva("dante-lyhty-putoaa");
+            }
+        }
+    }
+
+    pelaaja.style.left = x + "%";
+    pelaaja.style.bottom = "calc(var(--lattia) + " + y + "%)";
+    pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
+
+    requestAnimationFrame(paivita);
+}
+
+esilataa();
+lataaKerros(0);
+requestAnimationFrame(paivita);
