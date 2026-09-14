@@ -57,6 +57,10 @@ function esilataa() {
 }
 
 document.addEventListener("keydown", (tapahtuma) => {
+    if (tapahtuma.key === "ArrowLeft" || tapahtuma.key === "ArrowRight") {
+        tapahtuma.preventDefault();
+    }
+
     if (tapahtuma.key === "ArrowLeft") suunta = -1;
     if (tapahtuma.key === "ArrowRight") suunta = 1;
 });
