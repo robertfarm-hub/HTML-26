@@ -1,11 +1,13 @@
 const kentta = document.getElementById("kentta");
 const pelaaja = document.getElementById("pelaaja");
 const luukku = document.getElementById("luukku");
+const pimeys = document.getElementById("pimeys");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
 const RUUTUVALI = 180;
 const LUUKKU_LEVEYS = 12;
+const SADE = 150;
 
 const KENTAT = [
     { kuva: "kentta-0.png", luukku: 88, lattia: 9.4 },
@@ -17,7 +19,7 @@ const KENTAT = [
     { kuva: "kentta-6.png", luukku: 88, lattia: 11.9 },
     { kuva: "kentta-7.png", luukku: 12, lattia: 11.9 },
     { kuva: "kentta-8.png", luukku: 88, lattia: 9.4, karkaa: 12 },
-    { kuva: "kentta-9.png", luukku: null, lattia: 11.9 }
+    { kuva: "kentta-9.png", luukku: null, lattia: 11.9, valoLevenee: true }
 ];
 
 let kerros = 0;
@@ -114,6 +116,7 @@ function paivita(aika) {
         if (suunta !== 0) {
             if (!pelialkanut) {
                 pelialkanut = true;
+                document.body.classList.add("peli-kaynnissa");
                 vaihdaKuva("dante-lyhty-a");
             }
 
@@ -155,7 +158,18 @@ function paivita(aika) {
     pelaaja.style.left = x + "%";
     pelaaja.style.bottom = "calc(var(--lattia) + " + y + "%)";
     pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
+    const reunat = pelaaja.getBoundingClientRect();
+    let sade = SADE;
 
+    if (KENTAT[kerros].valoLevenee) {
+        const etaisyys = Math.abs(x - 50);
+        const lahella = Math.max(0, 1 - etaisyys / 45);
+        sade = SADE + lahella * lahella * 1600;
+    }
+
+    pimeys.style.setProperty("--lx", (reunat.left + reunat.width / 2) + "px");
+    pimeys.style.setProperty("--ly", (reunat.top + reunat.height / 2) + "px");
+    pimeys.style.setProperty("--sade", sade + "px");
     requestAnimationFrame(paivita);
 }
 
