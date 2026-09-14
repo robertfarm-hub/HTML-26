@@ -1,8 +1,11 @@
 const kentta = document.getElementById("kentta");
 const pelaaja = document.getElementById("pelaaja");
+const luukku = document.getElementById("luukku");
 
 const NOPEUS = 0.4;
 const RUUTUVALI = 180;
+const LUUKKU_KESKI = 88;
+const LUUKKU_LEVEYS = 12;
 
 let x = 50;
 let suunta = 0;
@@ -57,6 +60,15 @@ function paivita(aika) {
 
     if (x < 4.7) x = 4.7;
     if (x > 95.3) x = 95.3;
+
+    const luukunAlku = LUUKKU_KESKI - LUUKKU_LEVEYS / 2;
+    const luukunLoppu = LUUKKU_KESKI + LUUKKU_LEVEYS / 2;
+
+    if (x > luukunAlku && x < luukunLoppu) {
+        luukku.style.background = "#7A3B1F";
+    } else {
+        luukku.style.background = "var(--vari-taivas)";
+    }
 
     pelaaja.style.left = x + "%";
     pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
