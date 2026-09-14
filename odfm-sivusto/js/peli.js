@@ -6,13 +6,10 @@ const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
 const RUUTUVALI = 180;
 const LUUKKU_LEVEYS = 12;
-const LATTIA = 9.4;
 
 const KENTAT = [
-    { kuva: "kentta-0.png", luukku: 88 },
-    { kuva: "kentta-0.png", luukku: 12 },
-    { kuva: "kentta-0.png", luukku: 88 },
-    { kuva: "kentta-0.png", luukku: null }
+    { kuva: "kentta-0.png", luukku: 88, lattia: 9.4 },
+    { kuva: "kentta-1.png", luukku: 12, lattia: 19.4 }
 ];
 
 let kerros = 0;
@@ -40,6 +37,7 @@ function lataaKerros(numero) {
         luukku.style.display = "block";
         luukku.style.left = tiedot.luukku + "%";
     }
+    kentta.style.setProperty("--lattia", tiedot.lattia + "%");
 }
 
 function esilataa() {
@@ -130,7 +128,7 @@ function paivita(aika) {
     }
 
     pelaaja.style.left = x + "%";
-    pelaaja.style.bottom = (LATTIA + y) + "%";
+    pelaaja.style.bottom = "calc(var(--lattia) + " + y + "%)";
     pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
 
     requestAnimationFrame(paivita);
