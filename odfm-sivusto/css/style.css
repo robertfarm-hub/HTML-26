@@ -353,10 +353,13 @@ footer {
     pointer-events: none;
     opacity: 0;
     background: radial-gradient(circle var(--sade, 100px) at var(--lx, 50%) var(--ly, 50%),
-            rgba(232, 162, 74, 0.38) 0%,
-            rgba(232, 162, 74, 0.20) 38%,
-            rgba(70, 45, 20, 0.80) 68%,
-            var(--vari-tumma) 100%);
+            rgba(232, 162, 74, 0.34) 0%,
+            rgba(232, 162, 74, 0.26) 22%,
+            rgba(160, 100, 40, 0.42) 44%,
+            rgba(60, 38, 18, 0.72) 62%,
+            rgba(24, 20, 20, 0.90) 78%,
+            rgba(8, 9, 12, 0.98) 90%,
+            #05070A 100%);
 }
 
 body.peli-kaynnissa .pimeys {
