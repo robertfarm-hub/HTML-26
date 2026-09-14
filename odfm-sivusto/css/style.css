@@ -298,22 +298,9 @@ footer {
     max-width: 900px;
     margin: 0 auto;
     padding: 5rem 1.5rem;
-    text-align: center;
-}
-
-.peli-otsikko {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin: 0 0 0.5rem;
-}
-
-.peli-ohje {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin: 0 0 2rem;
-    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .peli {
@@ -337,13 +324,6 @@ footer {
     transform: translateX(-50%);
     background: url("../images/dante.png") no-repeat center bottom / contain;
     image-rendering: pixelated;
-}
-
-.peli-paluu {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-top: 2rem;
 }
 
 .lattia {
@@ -372,12 +352,31 @@ footer {
     pointer-events: none;
     opacity: 0;
     transition: opacity 1.5s;
-    background: radial-gradient(circle var(--sade, 150px) at var(--lx, 50%) var(--ly, 50%),
-            rgba(18, 22, 28, 0) 0%,
-            rgba(18, 22, 28, 0.9) 60%,
+    background: radial-gradient(circle var(--sade, 400px) at var(--lx, 50%) var(--ly, 50%),
+            rgba(232, 162, 74, 0.22) 0%,
+            rgba(232, 162, 74, 0.08) 22%,
+            rgba(18, 22, 28, 0) 42%,
+            rgba(18, 22, 28, 0.92) 75%,
             var(--vari-tumma) 100%);
 }
 
 body.peli-kaynnissa .pimeys {
     opacity: 1;
+}
+
+body.pelisivu {
+    background: linear-gradient(to bottom,
+            var(--vari-taivas) 0%,
+            var(--vari-taivas) 40%,
+            var(--vari-tumma) 85%);
+    background-attachment: fixed;
+}
+
+body:not(.peli-kaynnissa) .peli {
+    background-image: none !important;
+}
+
+body:not(.peli-kaynnissa) .lattia,
+body:not(.peli-kaynnissa) .luukku {
+    opacity: 0;
 }
