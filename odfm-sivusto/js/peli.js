@@ -16,7 +16,8 @@ const KENTAT = [
     { kuva: "kentta-5.png", luukku: 12, lattia: 13.1 },
     { kuva: "kentta-6.png", luukku: 88, lattia: 11.9 },
     { kuva: "kentta-7.png", luukku: 12, lattia: 11.9 },
-    { kuva: "kentta-8.png", luukku: 12, lattia: 9.4, karkaa: 88 }
+    { kuva: "kentta-8.png", luukku: 88, lattia: 9.4, karkaa: 12 },
+    { kuva: "kentta-9.png", luukku: null, lattia: 11.9 }
 ];
 
 let kerros = 0;
