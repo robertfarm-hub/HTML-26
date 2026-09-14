@@ -347,16 +347,15 @@ footer {
 }
 
 .pimeys {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    z-index: 50;
+    z-index: 5;
     pointer-events: none;
     opacity: 0;
-    background: radial-gradient(circle var(--sade, 400px) at var(--lx, 50%) var(--ly, 50%),
-            rgba(232, 162, 74, 0.22) 0%,
-            rgba(232, 162, 74, 0.08) 22%,
-            rgba(18, 22, 28, 0) 42%,
-            rgba(18, 22, 28, 0.92) 75%,
+    background: radial-gradient(circle var(--sade, 100px) at var(--lx, 50%) var(--ly, 50%),
+            rgba(232, 162, 74, 0.38) 0%,
+            rgba(232, 162, 74, 0.20) 38%,
+            rgba(70, 45, 20, 0.80) 68%,
             var(--vari-tumma) 100%);
 }
 
@@ -379,4 +378,8 @@ body:not(.peli-kaynnissa) .peli {
 body:not(.peli-kaynnissa) .lattia,
 body:not(.peli-kaynnissa) .luukku {
     opacity: 0;
+}
+
+body.pelisivu.peli-kaynnissa {
+    background: var(--vari-tumma);
 }

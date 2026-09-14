@@ -7,7 +7,7 @@ const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
 const RUUTUVALI = 180;
 const LUUKKU_LEVEYS = 12;
-const SADE = 200;
+const SADE_OSUUS = 0.16;
 const SYTTYMINEN = 900;
 const LYHTY_X = 0.855;
 const LYHTY_Y = 0.533;
@@ -163,22 +163,27 @@ function paivita(aika) {
     pelaaja.style.left = x + "%";
     pelaaja.style.bottom = "calc(var(--lattia) + " + y + "%)";
     pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
-    const reunat = pelaaja.getBoundingClientRect();
+    const nyt = KENTAT[kerros];
+    const leveys = kentta.clientWidth;
     const lyhtyX = katse === 1 ? LYHTY_X : 1 - LYHTY_X;
-    let sade = SADE;
 
-    if (KENTAT[kerros].valoLevenee) {
+    const valoX = x + (lyhtyX - 0.5) * 9.4;
+    const valoY = 100 - (nyt.lattia + y + 75 - 75 * LYHTY_Y);
+
+    let sade = leveys * SADE_OSUUS;
+
+    if (nyt.valoLevenee) {
         const etaisyys = Math.abs(x - 50);
         const lahella = Math.max(0, 1 - etaisyys / 45);
-        sade = SADE + lahella * lahella * 1600;
+        sade = sade + lahella * lahella * leveys * 2.5;
     }
 
     if (pelialkanut) {
         sade = sade * Math.min(1, (aika - alkuAika) / SYTTYMINEN);
     }
 
-    pimeys.style.setProperty("--lx", (reunat.left + reunat.width * lyhtyX) + "px");
-    pimeys.style.setProperty("--ly", (reunat.top + reunat.height * LYHTY_Y) + "px");
+    pimeys.style.setProperty("--lx", valoX + "%");
+    pimeys.style.setProperty("--ly", valoY + "%");
     pimeys.style.setProperty("--sade", sade + "px");
     requestAnimationFrame(paivita);
 }
