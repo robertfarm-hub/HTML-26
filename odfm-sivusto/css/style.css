@@ -401,3 +401,17 @@ body:not(.peli-kaynnissa) .luukku {
 body.pelisivu.peli-kaynnissa {
     background: var(--vari-tumma);
 }
+
+.maalilippu {
+    position: absolute;
+    left: 50%;
+    bottom: 42%;
+    width: 9%;
+    display: none;
+    transform: translateX(-50%) rotate(-7deg);
+}
+
+.maalilippu img {
+    width: 100%;
+    height: auto;
+}

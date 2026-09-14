@@ -3,6 +3,7 @@ const pelaaja = document.getElementById("pelaaja");
 const luukku = document.getElementById("luukku");
 const pimeys = document.getElementById("pimeys");
 const valo = document.getElementById("valo");
+const maalilippu = document.getElementById("maalilippu");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
@@ -23,7 +24,7 @@ const KENTAT = [
     { kuva: "kentta-6.png", luukku: 88, lattia: 11.9 },
     { kuva: "kentta-7.png", luukku: 12, lattia: 11.9 },
     { kuva: "kentta-8.png", luukku: 88, lattia: 9.4, karkaa: 12 },
-    { kuva: "kentta-9.png", luukku: null, lattia: 11.9, valoLevenee: true }
+    { kuva: "kentta-9.png", luukku: null, lattia: 11.9, valoLevenee: true, lippu: true }
 ];
 
 let kerros = 0;
@@ -61,6 +62,7 @@ function lataaKerros(numero) {
         luukku.style.display = "block";
         luukku.style.left = luukunPaikka + "%";
     }
+    maalilippu.style.display = tiedot.lippu ? "block" : "none";
 }
 
 function esilataa() {
