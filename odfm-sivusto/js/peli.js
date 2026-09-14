@@ -16,7 +16,7 @@ const KENTAT = [
     { kuva: "kentta-5.png", luukku: 12, lattia: 13.1 },
     { kuva: "kentta-6.png", luukku: 88, lattia: 11.9 },
     { kuva: "kentta-7.png", luukku: 12, lattia: 11.9 },
-    { kuva: "kentta-8.png", luukku: 12, lattia: 9.4, aukeaaKaynnista: 88 }
+    { kuva: "kentta-8.png", luukku: 12, lattia: 9.4, karkaa: 88 }
 ];
 
 let kerros = 0;
@@ -29,6 +29,8 @@ let vaihdettu = false;
 let pelialkanut = false;
 let ruutu = 0;
 let viimeVaihto = 0;
+let luukunPaikka = 0;
+let karannut = false;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
@@ -36,15 +38,21 @@ function vaihdaKuva(nimi) {
 
 function lataaKerros(numero) {
     const tiedot = KENTAT[numero];
+
     kentta.style.backgroundImage = 'url("../images/' + tiedot.kuva + '")';
+    kentta.style.setProperty("--lattia", tiedot.lattia + "%");
+
+    karannut = false;
+    luukunPaikka = tiedot.luukku;
+
+    luukku.style.transition = "none";
 
     if (tiedot.luukku === null) {
         luukku.style.display = "none";
     } else {
         luukku.style.display = "block";
-        luukku.style.left = tiedot.luukku + "%";
+        luukku.style.left = luukunPaikka + "%";
     }
-    kentta.style.setProperty("--lattia", tiedot.lattia + "%");
 }
 
 function esilataa() {
@@ -107,40 +115,3 @@ function paivita(aika) {
                 pelialkanut = true;
                 vaihdaKuva("dante-lyhty-a");
             }
-
-            katse = suunta;
-
-            if (aika - viimeVaihto > RUUTUVALI) {
-                viimeVaihto = aika;
-                ruutu = 1 - ruutu;
-                vaihdaKuva(ruutu === 0 ? "dante-lyhty-a" : "dante-lyhty-b");
-            }
-        } else if (pelialkanut && ruutu !== 0) {
-            ruutu = 0;
-            vaihdaKuva("dante-lyhty-a");
-        }
-
-        x = x + suunta * NOPEUS;
-
-        if (x < 4.7) x = 4.7;
-        if (x > 95.3) x = 95.3;
-
-        const kohde = KENTAT[kerros].luukku;
-
-        if (pelialkanut && kohde !== null && Math.abs(x - kohde) < LUUKKU_LEVEYS / 2) {
-            putoaa = true;
-            suunta = 0;
-            vaihdaKuva("dante-lyhty-putoaa");
-        }
-    }
-
-    pelaaja.style.left = x + "%";
-    pelaaja.style.bottom = "calc(var(--lattia) + " + y + "%)";
-    pelaaja.style.transform = "translateX(-50%) scaleX(" + katse + ")";
-
-    requestAnimationFrame(paivita);
-}
-
-esilataa();
-lataaKerros(0);
-requestAnimationFrame(paivita);
