@@ -7,7 +7,8 @@ const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
 const RUUTUVALI = 180;
 const LUUKKU_LEVEYS = 12;
-const SADE = 400;
+const SADE = 200;
+const SYTTYMINEN = 900;
 const LYHTY_X = 0.855;
 const LYHTY_Y = 0.533;
 
@@ -36,6 +37,7 @@ let ruutu = 0;
 let viimeVaihto = 0;
 let luukunPaikka = 0;
 let karannut = false;
+let alkuAika = 0;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
@@ -118,6 +120,7 @@ function paivita(aika) {
         if (suunta !== 0) {
             if (!pelialkanut) {
                 pelialkanut = true;
+                alkuAika = aika;
                 document.body.classList.add("peli-kaynnissa");
                 vaihdaKuva("dante-lyhty-a");
             }
@@ -168,6 +171,10 @@ function paivita(aika) {
         const etaisyys = Math.abs(x - 50);
         const lahella = Math.max(0, 1 - etaisyys / 45);
         sade = SADE + lahella * lahella * 1600;
+    }
+
+    if (pelialkanut) {
+        sade = sade * Math.min(1, (aika - alkuAika) / SYTTYMINEN);
     }
 
     pimeys.style.setProperty("--lx", (reunat.left + reunat.width * lyhtyX) + "px");
