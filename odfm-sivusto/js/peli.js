@@ -27,8 +27,8 @@ window.addEventListener("pointerup", () => {
 function paivita() {
     x = x + suunta * NOPEUS;
 
-    if (x < 2.5) x = 2.5;
-    if (x > 97.5) x = 97.5;
+    if (x < 4.3) x = 4.3;
+    if (x > 95.7) x = 95.7;
 
     pelaaja.style.left = x + "%";
     requestAnimationFrame(paivita);

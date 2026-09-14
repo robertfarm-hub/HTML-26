@@ -179,6 +179,7 @@ main {
     margin: 0 0 1.25rem;
     max-width: 60ch;
 }
+
 .yhteys {
     max-width: 700px;
     margin: 0 auto;
@@ -232,6 +233,7 @@ main {
     width: 140px;
     height: auto;
 }
+
 .sivunavigaatio {
     background: var(--vari-pohja);
     color: var(--vari-teksti-tumma);
@@ -270,6 +272,7 @@ footer {
     color: rgba(232, 232, 232, 0.6);
     position: relative;
 }
+
 .mysteeri {
     position: absolute;
     bottom: 0.25rem;
@@ -288,6 +291,7 @@ footer {
 .mysteeri:focus-visible {
     opacity: 1;
 }
+
 .peli-sivu {
     min-height: 100vh;
     max-width: 900px;
@@ -325,10 +329,11 @@ footer {
     position: absolute;
     bottom: 8%;
     left: 50%;
-    width: 5%;
-    height: 45%;
+    width: 8.6%;
+    height: 75%;
     transform: translateX(-50%);
-    background: var(--vari-teksti-tumma);
+    background: url("../images/dante.png") no-repeat center bottom / contain;
+    image-rendering: pixelated;
 }
 
 .peli-paluu {
