@@ -4,6 +4,7 @@ const luukku = document.getElementById("luukku");
 const pimeys = document.getElementById("pimeys");
 const valo = document.getElementById("valo");
 const maalilippu = document.getElementById("maalilippu");
+const MAALI_OSOITE = "../index.html";
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
@@ -40,6 +41,7 @@ let viimeVaihto = 0;
 let luukunPaikka = 0;
 let karannut = false;
 let alkuAika = 0;
+let maalissa = false;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
@@ -160,6 +162,12 @@ function paivita(aika) {
                 suunta = 0;
                 vaihdaKuva("dante-lyhty-putoaa");
             }
+        }
+
+        if (nyt.lippu && !maalissa && pelialkanut && Math.abs(x - 50) < 4) {
+            maalissa = true;
+            suunta = 0;
+            window.location.href = MAALI_OSOITE;
         }
     }
 
