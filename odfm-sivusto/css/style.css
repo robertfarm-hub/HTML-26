@@ -432,6 +432,8 @@ body.pelisivu.peli-kaynnissa {
     text-transform: uppercase;
     white-space: nowrap;
     pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .kerrosnimi {
