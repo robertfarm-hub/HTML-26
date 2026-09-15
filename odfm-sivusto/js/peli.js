@@ -44,6 +44,7 @@ let luukunPaikka = 0;
 let karannut = false;
 let alkuAika = 0;
 let maalissa = false;
+let nimiLoytynyt = false;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
@@ -68,6 +69,8 @@ function lataaKerros(numero) {
     }
     maalilippu.style.display = tiedot.lippu ? "block" : "none";
     kerrosnimi.textContent = tiedot.nimi || "";
+    kerrosnimi.classList.remove("nimi-loytyi");
+    nimiLoytynyt = false;
 }
 
 function esilataa() {
@@ -194,6 +197,11 @@ function paivita(aika) {
 
     if (pelialkanut) {
         sade = sade * Math.min(1, (aika - alkuAika) / SYTTYMINEN);
+    }
+
+    if (nyt.nimi && !nimiLoytynyt && Math.abs(x - 50) < sade / leveys * 60) {
+        nimiLoytynyt = true;
+        kerrosnimi.classList.add("nimi-loytyi");
     }
 
     pimeys.style.setProperty("--lx", valoX + "%");
