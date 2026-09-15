@@ -385,11 +385,7 @@ body.peli-kaynnissa .valo {
 }
 
 body.pelisivu {
-    background: linear-gradient(to bottom,
-            var(--vari-taivas) 0%,
-            var(--vari-taivas) 40%,
-            var(--vari-tumma) 85%);
-    background-attachment: fixed;
+    background: var(--vari-taivas);
 }
 
 body:not(.peli-kaynnissa) .peli {
