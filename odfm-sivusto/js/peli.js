@@ -4,28 +4,30 @@ const luukku = document.getElementById("luukku");
 const pimeys = document.getElementById("pimeys");
 const valo = document.getElementById("valo");
 const maalilippu = document.getElementById("maalilippu");
-const MAALI_OSOITE = "../index.html";
+const kerrosnimi = document.getElementById("kerrosnimi");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
 const RUUTUVALI = 180;
 const LUUKKU_LEVEYS = 12;
+const HAHMO_LEVEYS = 9.4;
 const SADE_OSUUS = 0.26;
 const SYTTYMINEN = 900;
 const LYHTY_X = 0.855;
 const LYHTY_Y = 0.533;
+const MAALI_OSOITE = "../index.html";
 
 const KENTAT = [
     { kuva: "kentta-0.png", luukku: 80, lattia: 10.6 },
-    { kuva: "kentta-1.png", luukku: 12, lattia: 18.8 },
-    { kuva: "kentta-2.png", luukku: 88, lattia: 14.4 },
-    { kuva: "kentta-3.png", luukku: 12, lattia: 11.9 },
-    { kuva: "kentta-4.png", luukku: 88, lattia: 22.5 },
-    { kuva: "kentta-5.png", luukku: 12, lattia: 13.1 },
-    { kuva: "kentta-6.png", luukku: 88, lattia: 11.9 },
-    { kuva: "kentta-7.png", luukku: 12, lattia: 11.9 },
-    { kuva: "kentta-8.png", luukku: 88, lattia: 9.4, karkaa: 12 },
-    { kuva: "kentta-9.png", luukku: null, lattia: 11.9, valoLevenee: true, lippu: true }
+    { kuva: "kentta-1.png", luukku: 12, lattia: 18.8, nimi: "Limbo" },
+    { kuva: "kentta-2.png", luukku: 88, lattia: 14.4, nimi: "Lussuria" },
+    { kuva: "kentta-3.png", luukku: 12, lattia: 11.9, nimi: "Gola" },
+    { kuva: "kentta-4.png", luukku: 88, lattia: 22.5, nimi: "Avarizia" },
+    { kuva: "kentta-5.png", luukku: 12, lattia: 13.1, nimi: "Ira" },
+    { kuva: "kentta-6.png", luukku: 88, lattia: 11.9, nimi: "Eresia" },
+    { kuva: "kentta-7.png", luukku: 12, lattia: 11.9, nimi: "Violenza" },
+    { kuva: "kentta-8.png", luukku: 88, lattia: 9.4, karkaa: 12, nimi: "Malebolge" },
+    { kuva: "kentta-9.png", luukku: null, lattia: 11.9, valoLevenee: true, lippu: true, nimi: "Cocito" }
 ];
 
 let kerros = 0;
@@ -65,6 +67,7 @@ function lataaKerros(numero) {
         luukku.style.left = luukunPaikka + "%";
     }
     maalilippu.style.display = tiedot.lippu ? "block" : "none";
+    kerrosnimi.textContent = tiedot.nimi || "";
 }
 
 function esilataa() {
@@ -149,7 +152,7 @@ function paivita(aika) {
 
         const tiedot = KENTAT[kerros];
         const luukulla = tiedot.luukku !== null
-            && Math.abs(x - luukunPaikka) < LUUKKU_LEVEYS / 2;
+            && Math.abs(x - luukunPaikka) < (LUUKKU_LEVEYS - HAHMO_LEVEYS) / 2;
 
         if (luukulla && pelialkanut) {
             if (tiedot.karkaa !== undefined && !karannut) {
@@ -164,7 +167,7 @@ function paivita(aika) {
             }
         }
 
-        if (nyt.lippu && !maalissa && pelialkanut && Math.abs(x - 50) < 4) {
+        if (tiedot.lippu && !maalissa && pelialkanut && Math.abs(x - 50) < 0.4) {
             maalissa = true;
             suunta = 0;
             window.location.href = MAALI_OSOITE;
