@@ -7,6 +7,7 @@ const maalilippu = document.getElementById("maalilippu");
 const kerrosnimi = document.getElementById("kerrosnimi");
 const kerrosnimiValo = document.getElementById("kerrosnimi-valo");
 const musiikki = document.getElementById("musiikki");
+const aaniNappi = document.getElementById("aani");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
@@ -252,6 +253,14 @@ function paivita(aika) {
     valo.style.setProperty("--sade", sade + "px");
     requestAnimationFrame(paivita);
 }
+
+aaniNappi.addEventListener("click", () => {
+    musiikki.muted = !musiikki.muted;
+    aaniNappi.classList.toggle("vaimennettu", musiikki.muted);
+    aaniNappi.setAttribute("aria-label",
+        musiikki.muted ? "Palauta musiikki" : "Vaimenna musiikki");
+    aaniNappi.blur();
+});
 
 esilataa();
 lataaKerros(0);

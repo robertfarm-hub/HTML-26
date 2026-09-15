@@ -16,7 +16,7 @@
 </head>
 
 <body class="pelisivu">
-        <main class="peli-sivu">
+    <main class="peli-sivu">
         <h1 class="vain-ruudunlukijalle">ODFM</h1>
 
         <div class="peli" id="kentta">
@@ -37,7 +37,17 @@
             <p>Tämä sivu tarvitsee JavaScriptin.</p>
         </noscript>
     </main>
-    <audio id="musiikki" src="../audio/peli.mp3" loop preload="auto"></audio>
+    <button class="aani" id="aani" type="button" aria-label="Vaimenna musiikki">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4z" />
+            <path class="aani-aallot" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" />
+            <path class="aani-viiva" d="M16 9l6 6M22 9l-6 6" />
+        </svg>
+    </button>
+    <audio id="musiikki" loop preload="auto">
+        <source src="../audio/peli.ogg" type="audio/ogg">
+        <source src="../audio/peli.mp3" type="audio/mpeg">
+    </audio>
     <script src="../js/peli.js"></script>
 </body>
 </body>

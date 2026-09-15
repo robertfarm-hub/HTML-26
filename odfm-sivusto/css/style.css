@@ -453,3 +453,50 @@ body.pelisivu.peli-kaynnissa {
     color: rgba(255, 215, 160, 0.95);
     text-shadow: 0 0 22px rgba(232, 162, 74, 0.85), 0 0 50px rgba(232, 162, 74, 0.55);
 }
+
+.aani {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 60;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0.5rem;
+    border: 0;
+    background: none;
+    color: var(--vari-teksti-tumma);
+    opacity: 0.35;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.aani:hover,
+.aani:focus-visible {
+    opacity: 0.9;
+}
+
+.aani svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    fill-rule: evenodd;
+}
+
+.aani .aani-aallot {
+    fill: none;
+}
+
+.aani .aani-viiva {
+    display: none;
+}
+
+.aani.vaimennettu .aani-aallot {
+    display: none;
+}
+
+.aani.vaimennettu .aani-viiva {
+    display: block;
+}
