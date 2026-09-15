@@ -429,11 +429,17 @@ body.pelisivu.peli-kaynnissa {
     text-indent: 0.4em;
     text-transform: uppercase;
     white-space: nowrap;
-    color: rgba(240, 190, 120, 0.85);
-    text-shadow: 0 0 22px rgba(232, 162, 74, 0.8), 0 0 45px rgba(232, 162, 74, 0.5);
     pointer-events: none;
 }
 
-.kerrosnimi.nimi-loytyi {
+.kerrosnimi span {
+    position: relative;
+    color: rgba(240, 190, 120, 0);
+    transition: color 0.9s, text-shadow 0.9s;
+}
+
+.kerrosnimi span.nimi-loytyi {
     z-index: 7;
+    color: rgba(240, 190, 120, 0.9);
+    text-shadow: 0 0 22px rgba(232, 162, 74, 0.8), 0 0 45px rgba(232, 162, 74, 0.5);
 }
