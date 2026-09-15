@@ -1,0 +1,28 @@
+body {
+    background-color: bisque;
+}
+ 
+.info {
+    background-color: blueviolet;
+    padding: 1rem;
+}
+/*fontti pääotsikolle sekä kakkos-otsikolle */
+h1, h2 {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }  
+.card {
+    background-color: blueviolet;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 1rem;
+    color:azure;
+}
+.card2 {
+    background-color: blueviolet;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    color:azure;
+    line-height: 1.6;
+}
+#teksti {
+    color: #eb4034;
+}
