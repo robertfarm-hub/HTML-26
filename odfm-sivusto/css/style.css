@@ -456,16 +456,17 @@ body.pelisivu.peli-kaynnissa {
 
 .aani {
     position: fixed;
-    top: 1.2rem;
-    right: 1.2rem;
+    top: 1rem;
+    right: 1rem;
     z-index: 60;
-    width: 2.6rem;
-    height: 2.6rem;
-    padding: 0.5rem;
-    border: 0;
-    background: none;
+    width: 2.9rem;
+    height: 2.9rem;
+    padding: 0.6rem;
+    border: 1px solid rgba(232, 232, 232, 0.25);
+    border-radius: 50%;
+    background: rgba(18, 22, 28, 0.55);
     color: var(--vari-teksti-tumma);
-    opacity: 0.35;
+    opacity: 0.8;
     cursor: pointer;
     transition: opacity 0.3s;
 }

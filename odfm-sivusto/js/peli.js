@@ -6,7 +6,6 @@ const valo = document.getElementById("valo");
 const maalilippu = document.getElementById("maalilippu");
 const kerrosnimi = document.getElementById("kerrosnimi");
 const kerrosnimiValo = document.getElementById("kerrosnimi-valo");
-const musiikki = document.getElementById("musiikki");
 const aaniNappi = document.getElementById("aani");
 
 const NOPEUS = 0.4;
@@ -48,18 +47,51 @@ let karannut = false;
 let alkuAika = 0;
 let maalissa = false;
 let kirjaimet = [];
-let musiikkiAlkanut = false;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
 }
 
-function aloitaMusiikki() {
-    if (musiikkiAlkanut) return;
+const AANENVOIMAKKUUS = 0.25;
 
+let aaniKonteksti = null;
+let aaniVoimakkuus = null;
+let musiikkiAlkanut = false;
+let vaimennettu = false;
+
+async function lataaAani(osoite) {
+    const vastaus = await fetch(osoite);
+    const data = await vastaus.arrayBuffer();
+    return await aaniKonteksti.decodeAudioData(data);
+}
+
+async function aloitaMusiikki() {
+    if (musiikkiAlkanut) return;
     musiikkiAlkanut = true;
-    musiikki.volume = 0.5;
-    musiikki.play().catch(() => { });
+
+    try {
+        aaniKonteksti = new AudioContext();
+
+        let puskuri;
+
+        try {
+            puskuri = await lataaAani("../audio/peli.ogg");
+        } catch (virhe) {
+            puskuri = await lataaAani("../audio/peli.mp3");
+        }
+
+        aaniVoimakkuus = aaniKonteksti.createGain();
+        aaniVoimakkuus.gain.value = vaimennettu ? 0 : AANENVOIMAKKUUS;
+        aaniVoimakkuus.connect(aaniKonteksti.destination);
+
+        const lahde = aaniKonteksti.createBufferSource();
+        lahde.buffer = puskuri;
+        lahde.loop = true;
+        lahde.connect(aaniVoimakkuus);
+        lahde.start();
+    } catch (virhe) {
+        musiikkiAlkanut = false;
+    }
 }
 
 function lataaKerros(numero) {
@@ -255,10 +287,15 @@ function paivita(aika) {
 }
 
 aaniNappi.addEventListener("click", () => {
-    musiikki.muted = !musiikki.muted;
-    aaniNappi.classList.toggle("vaimennettu", musiikki.muted);
+    vaimennettu = !vaimennettu;
+
+    if (aaniVoimakkuus) {
+        aaniVoimakkuus.gain.value = vaimennettu ? 0 : AANENVOIMAKKUUS;
+    }
+
+    aaniNappi.classList.toggle("vaimennettu", vaimennettu);
     aaniNappi.setAttribute("aria-label",
-        musiikki.muted ? "Palauta musiikki" : "Vaimenna musiikki");
+        vaimennettu ? "Palauta musiikki" : "Vaimenna musiikki");
     aaniNappi.blur();
 });
 
