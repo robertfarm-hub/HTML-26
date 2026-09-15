@@ -6,6 +6,7 @@ const valo = document.getElementById("valo");
 const maalilippu = document.getElementById("maalilippu");
 const kerrosnimi = document.getElementById("kerrosnimi");
 const kerrosnimiValo = document.getElementById("kerrosnimi-valo");
+const musiikki = document.getElementById("musiikki");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
@@ -46,9 +47,18 @@ let karannut = false;
 let alkuAika = 0;
 let maalissa = false;
 let kirjaimet = [];
+let musiikkiAlkanut = false;
 
 function vaihdaKuva(nimi) {
     pelaaja.style.backgroundImage = 'url("../images/' + nimi + '.png")';
+}
+
+function aloitaMusiikki() {
+    if (musiikkiAlkanut) return;
+
+    musiikkiAlkanut = true;
+    musiikki.volume = 0.5;
+    musiikki.play().catch(() => { });
 }
 
 function lataaKerros(numero) {
@@ -112,6 +122,8 @@ document.addEventListener("keydown", (tapahtuma) => {
 
     if (tapahtuma.key === "ArrowLeft") suunta = -1;
     if (tapahtuma.key === "ArrowRight") suunta = 1;
+
+    if (suunta !== 0) aloitaMusiikki();
 });
 
 document.addEventListener("keyup", () => {
@@ -124,6 +136,7 @@ kentta.addEventListener("pointerdown", (tapahtuma) => {
     const reunat = kentta.getBoundingClientRect();
     const kohta = (tapahtuma.clientX - reunat.left) / reunat.width * 100;
     suunta = kohta < x ? -1 : 1;
+    aloitaMusiikki();
 });
 
 kentta.addEventListener("contextmenu", (tapahtuma) => {
