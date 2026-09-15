@@ -314,6 +314,8 @@ footer {
     image-rendering: pixelated;
     touch-action: none;
     --lattia: 9.4%;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .pelaaja {
