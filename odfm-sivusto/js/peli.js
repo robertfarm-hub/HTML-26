@@ -119,9 +119,15 @@ document.addEventListener("keyup", () => {
 });
 
 kentta.addEventListener("pointerdown", (tapahtuma) => {
+    tapahtuma.preventDefault();
+
     const reunat = kentta.getBoundingClientRect();
     const kohta = (tapahtuma.clientX - reunat.left) / reunat.width * 100;
     suunta = kohta < x ? -1 : 1;
+});
+
+kentta.addEventListener("contextmenu", (tapahtuma) => {
+    tapahtuma.preventDefault();
 });
 
 window.addEventListener("pointerup", () => {

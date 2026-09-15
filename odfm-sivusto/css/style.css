@@ -316,6 +316,7 @@ footer {
     --lattia: 9.4%;
     user-select: none;
     -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .pelaaja {
