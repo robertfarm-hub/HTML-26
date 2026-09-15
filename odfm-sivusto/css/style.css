@@ -418,11 +418,13 @@ body.pelisivu.peli-kaynnissa {
     height: auto;
 }
 
-.kerrosnimi {
+.kerrosnimi,
+.kerrosnimi-valo {
     position: absolute;
-    left: 50%;
+    left: 0;
+    right: 0;
     bottom: 38%;
-    transform: translateX(-50%);
+    text-align: center;
     font-family: var(--fontti-otsikko);
     font-size: clamp(1.1rem, 4.5vw, 3rem);
     letter-spacing: 0.4em;
@@ -432,14 +434,21 @@ body.pelisivu.peli-kaynnissa {
     pointer-events: none;
 }
 
-.kerrosnimi span {
-    position: relative;
-    color: rgba(240, 190, 120, 0);
-    transition: color 0.9s, text-shadow 0.9s;
+.kerrosnimi {
+    color: rgba(240, 190, 120, 0.85);
+    text-shadow: 0 0 22px rgba(232, 162, 74, 0.8), 0 0 45px rgba(232, 162, 74, 0.5);
 }
 
-.kerrosnimi span.nimi-loytyi {
+.kerrosnimi-valo {
     z-index: 7;
-    color: rgba(240, 190, 120, 0.9);
-    text-shadow: 0 0 22px rgba(232, 162, 74, 0.8), 0 0 45px rgba(232, 162, 74, 0.5);
+}
+
+.kerrosnimi-valo span {
+    color: rgba(240, 190, 120, 0);
+    transition: color 2.2s, text-shadow 2.2s;
+}
+
+.kerrosnimi-valo span.nimi-loytyi {
+    color: rgba(255, 215, 160, 0.95);
+    text-shadow: 0 0 22px rgba(232, 162, 74, 0.85), 0 0 50px rgba(232, 162, 74, 0.55);
 }

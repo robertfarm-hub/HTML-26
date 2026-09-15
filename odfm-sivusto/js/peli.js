@@ -5,6 +5,7 @@ const pimeys = document.getElementById("pimeys");
 const valo = document.getElementById("valo");
 const maalilippu = document.getElementById("maalilippu");
 const kerrosnimi = document.getElementById("kerrosnimi");
+const kerrosnimiValo = document.getElementById("kerrosnimi-valo");
 
 const NOPEUS = 0.4;
 const PUTOAMISNOPEUS = 2.5;
@@ -68,14 +69,15 @@ function lataaKerros(numero) {
         luukku.style.left = luukunPaikka + "%";
     }
     maalilippu.style.display = tiedot.lippu ? "block" : "none";
-    kerrosnimi.textContent = "";
+    kerrosnimi.textContent = tiedot.nimi || "";
+    kerrosnimiValo.textContent = "";
     kirjaimet = [];
 
     if (tiedot.nimi) {
         for (const merkki of tiedot.nimi) {
             const palanen = document.createElement("span");
             palanen.textContent = merkki;
-            kerrosnimi.appendChild(palanen);
+            kerrosnimiValo.appendChild(palanen);
             kirjaimet.push({ elementti: palanen, paikka: 0 });
         }
 
