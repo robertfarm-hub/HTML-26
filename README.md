@@ -12,6 +12,7 @@ Tieto- ja viestintätekniikan perustutkinnon HTML-kurssin työt.
 - **[Osa 12](Osa-12/)** – Diasarjan osan 12 harjoitukset.
 - **[Pasi-Anssi](pasi-anssi/)** – Pasi-Anssi-sivustoharjoitus.
 - **[Canvas-elementti](canvas-elementti/)** – JavaScriptin harjoittelua canvas-elementin parissa.
+- **[CSS-kertausta](css-kertaus/)** – CSS:n alkeiden kertaus SchoolAI:n kanssa.
 
 ## Omat projektit:
 
