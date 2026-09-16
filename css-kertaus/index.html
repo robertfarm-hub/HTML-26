@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>CSS-kertaus</title>
 </head>
+
 <body>
     <header>
-    <h1>CSS-ulkomuisti-harjoitus</h1>
-    <p class="info">Annettiin tekstiosiolle class</p>
+        <h1>CSS-ulkomuisti-harjoitus</h1>
+        <p class="info">Annettiin tekstiosiolle class</p>
     </header>
     <main>
         <section>
-    <article class="card">
-        <h2>Tehdään css ulkomuistista</h2>
-        <p>tekstin sisällöllä ei merkitystä</p>
-    </article></section>
-    <section>
-    <article class="card2">
-        <h2>Tehdään css lisää ulkomuistista</h2>
-        <p id="teksti">tekstin sisällöllä ei merkitystä, mutta sitä pitää olla <strong>enemmän</strong></p>
-        <a href="https://robertfarm-hub.github.io/HTML-26/">harjoitukset verkossa</a>
-    </article></section>
+            <article class="card">
+                <h2>Tehdään css ulkomuistista</h2>
+                <p>tekstin sisällöllä ei merkitystä</p>
+            </article>
+        </section>
+        <section>
+            <article class="card2">
+                <h2>Tehdään css lisää ulkomuistista</h2>
+                <p id="teksti">tekstin sisällöllä ei merkitystä, mutta sitä pitää olla <strong>enemmän</strong></p>
+                <a href="https://robertfarm-hub.github.io/HTML-26/">harjoitukset verkossa</a>
+            </article>
+        </section>
+
+        <article class="post">
+            <h2>Lisää harjoituksia</h2>
+            <p>Johdanto</p>
+            <section>
+                <p>Leipäteksti</p>
+            </section>
+        </article>
+
+        <form>
+            <div class="form-group">
+                <label for="email">Sähköposti</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="nimi">Nimi</label>
+                <input type="text" id="nimi" name="nimi" required>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="uutiskirje" name="uutiskirje">
+                <label for="uutiskirje">Tilaa uutiskirje</label>
+            </div>
+
+            <button type="submit">Lähetä</button>
+        </form>
+
     </main>
+
     <footer>
         &copy; Robert Färm
     </footer>
+
 </body>
+
 </html>
