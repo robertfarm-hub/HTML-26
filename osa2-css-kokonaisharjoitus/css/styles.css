@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    color:firebrick;
+}
+
+.button {
+    background-color: rgb(67, 37, 0);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 3px solid rgb(93, 51, 0);
+}
+
+.button:hover {
+    background-color: rgb(85, 0, 255);
+    color: white;
+    border: 3px solid rgb(93, 51, 0);
+    cursor: pointer;
+}
+/* jos disabled olisi hoverin yläpuolella, hover vaikuttaisi myös siihen, koska molemmilla säännöillä on sama specificity (0,2,0), joten myöhempi voittaa. siksi siirretty alas*/
+.button[disabled] {
+    background-color: lightgray;
+    color: gray;
+    border: 3px solid gray;
+    cursor: not-allowed;
+}
+
+.button:focus-visible {
+    outline: 3px solid rgb(72, 14, 197);
+    outline-offset: 2px;
+}
+
+.notice {
+    border-left: 4px solid gold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: darkblue;
+    color: white;
+}
