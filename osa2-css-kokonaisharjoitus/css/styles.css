@@ -9,6 +9,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     border: 3px solid rgb(93, 51, 0);
+    text-decoration: none;
 }
 
 .button:hover {
@@ -36,4 +37,27 @@ body {
     border-radius: 4px;
     background-color: darkblue;
     color: white;
+    max-width: 400px;
+}
+
+#otsikko {
+    color: darkgreen;
+    text-decoration: underline;
+}
+
+.card h3 {
+  color: darkred;
+}
+
+.card p {
+  color: darkred;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    background-color: lightyellow;
+    max-width: 400px;
 }

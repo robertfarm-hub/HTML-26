@@ -62,3 +62,4 @@ button:focus-visible, input:focus-visible {
 input[type="checkbox"]:checked + label {
     font-weight: bold;
 }
+
