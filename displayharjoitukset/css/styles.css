@@ -1,20 +1,20 @@
 .box {
     display:inline-block;
-    width: 20px;
+    width: 200px;
     padding:0,5em;
     background-color: bisque;
 }
 
 .box2 {
     display:inline;
-    width: 20px;
+    width: 200px;
     padding:0,5em;
     background-color: bisque;
 }
 
 .box3 {
     display:block;
-    width: 20px;
+    width: 200px;
     padding:0,5em;
     background-color: bisque;
 }

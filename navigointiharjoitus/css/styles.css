@@ -1,0 +1,14 @@
+nav li {
+    display:inline-block;
+    width: 50px;
+    padding:0,5em;
+    margin: 10px;
+    background-color: bisque;
+}
+
+nav li:hover {
+    display:inline-block;
+    width: 50px;
+    padding:0,5em;
+    background-color: rgb(196, 196, 255);
+}
