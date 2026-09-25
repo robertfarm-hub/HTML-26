@@ -1,3 +1,225 @@
 /* CSS-kokonaisharjoitus, osa 6 */
 
-/* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
+/* ---------- Perusasetukset ---------- */
+
+/* box-sizing: border-box saa padding ja border mahtumaan annetun
+   leveyden SISÄÄN. Ilman tätä 280px + padding = yli 280px. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* ---------- Kortit (osan 6 pääasia) ---------- */
+
+/* Flex-container korteille. Suorat lapset (.card) ovat flex-itemejä.
+   Oletussuunta on row, joten kortit menevät riviin. */
+.card-list {
+    display: flex;
+    /* wrap sallii korttien siirtyä uudelle riville kun tila loppuu.
+       Ilman tätä ne kutistuisivat ja sisältö vuotaisi yli. */
+    flex-wrap: wrap;
+    /* gap tulee vain itemien VÄLIIN, toisin kuin margin. */
+    gap: 1.5rem;
+}
+
+/* Kortti on sekä item (card-listassa) että container (omalle
+   sisällölleen). Siksi tässä on sekä flex: ... että display: flex. */
+.card {
+    display: flex;
+    /* column kääntää pääakselin pystyyn -> sisältö ylhäältä alas.
+       Tarvitaan, jotta margin-top: auto toimii napissa. */
+    flex-direction: column;
+    /* flex-grow flex-shrink flex-basis:
+       1 = saa kasvaa, 1 = saa kutistua, 280px = lähtökoko.
+       HUOM: basis ei ole yläraja - grow venyttää kortit leveämmiksi
+       jos tilaa on. Jos ei haluta venymistä -> flex: 0 1 280px. */
+    flex: 1 1 280px;
+    /* relative = ankkuri .card__badgelle, joka on absolute.
+       Ilman tätä badge lentäisi koko sivun nurkkaan. */
+    position: relative;
+    padding: 1.5rem;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* auto-margin imee kaiken vapaan tilan ja työntää napin kortin
+   pohjalle. Toimii vain koska .card on flex-container.
+   Valitsin ".card .button" = vain kortin sisällä olevat napit. */
+.card .button {
+    margin-top: auto;
+}
+
+/* Modifier. Elementillä on class="card card--featured", eli molemmat
+   säännöt osuvat. Sama specificity (0,1,0) -> JÄRJESTYS ratkaisee,
+   siksi tämä on .card:n JÄLKEEN. Tähän vain se mikä muuttuu. */
+.card--featured {
+    border-color: #1e293b;
+    border-width: 2px;
+    background-color: #f8fafc;
+}
+
+/* absolute = irti normaalivirrasta. Muut kortin lapset käyttäytyvät
+   kuin badgea ei olisi. top/right mitataan .card:n reunoista, koska
+   se on lähin ei-static esivanhempi. */
+.card__badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #1e293b;
+    color: #f1f5f9;
+    padding: 0.25rem 0.6rem;
+    /* iso arvo -> päädyt pyöristyvät täysin (pillerin muoto) */
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Header ja navigaatio ---------- */
+
+/* Itemit: .brand ja <nav>. */
+.site-header {
+    display: flex;
+    /* PÄÄAKSELI (tässä vaaka): ensimmäinen alkuun, viimeinen loppuun.
+       Vaihtoehto samaan: nav:lle margin-left: auto. */
+    justify-content: space-between;
+    /* RISTIAKSELI (tässä pysty): keskitetään eri korkuiset itemit.
+       Oletus olisi stretch. */
+    align-items: center;
+    gap: 1rem;
+    /* kaksi arvoa = ylä/ala 1rem, vasen/oikea 1.5rem */
+    padding: 1rem 1.5rem;
+    background-color: #1e293b;
+}
+
+/* HUOM: itemejä ovat <li>-elementit, EIVÄT <a>-linkit.
+   Flex koskee vain suoria lapsia. */
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    /* nämä kolme kulkevat aina yhdessä: pallukat pois ja selaimen
+       oletusmarginaali + ~40px padding nollaan */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* block tekee koko paddingin alueesta klikattavan. Inline-linkissä
+   pystypadding ei kasvata klikkausaluetta oikein. */
+.nav-list a {
+    display: block;
+    padding: 0.5rem;
+    color: #f1f5f9;
+    text-decoration: none;
+}
+
+/* hover = hiiri, focus-visible = näppäimistö (Tab). Molemmat
+   tarvitaan. Pilkku valitsimien välissä = "tai".
+   Tähän vain muuttuvat ominaisuudet, muut ovat jo voimassa. */
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    color: #fbbf24;
+    text-decoration: underline;
+}
+
+
+/* ---------- Leijuvat elementit (osa 5) ---------- */
+
+/* fixed = kiinni selainikkunassa, ei sivussa -> seuraa vierittäessä.
+   z-index toimii vain ei-static elementeissä: isompi luku päälle. */
+.help-button {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 10;
+    /* sama width ja height + 50% = ympyrä */
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #1e293b;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* Saavutettavuuslinkki: piilossa ruudun yläpuolella, ilmestyy kun
+   näppäimistön käyttäjä tabaa sivun alussa.
+   EI display: none - piilotettu elementti ei voi saada fokusta.
+   absolute eikä fixed, koska kuuluu sivun alkuun eikä saa leijua. */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background-color: #fbbf24;
+    color: #1e293b;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+
+/* ---------- Hero ja footer ---------- */
+
+.hero {
+    padding: 3rem 1.5rem;
+    background-color: #f1f5f9;
+    text-align: center;
+}
+
+.eyebrow {
+    /* kolme arvoa = ylä 0, sivut 0, ala 0.5rem */
+    margin: 0 0 0.5rem;
+    color: #64748b;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hero__lead {
+    /* ch = yhden merkin leveys. 50-75 merkkiä/rivi on luettavin. */
+    max-width: 55ch;
+    /* sivujen auto keskittää - toimii VAIN koska on max-width,
+       muuten ei ole ylijäämätilaa jaettavaksi */
+    margin: 0 auto 1.5rem;
+    /* yksikötön arvo periytyy kertoimena, ei lukittuna pikselimääränä */
+    line-height: 1.6;
+}
+
+.site-footer {
+    padding: 2rem 1.5rem;
+    background-color: #1e293b;
+    color: #f1f5f9;
+    text-align: center;
+}
+
+
+/* ---------- Napit ---------- */
+
+/* inline-block: linkki on inline, jolloin pystypadding ei toimi
+   kunnolla. inline-block antaa laatikon ominaisuudet mutta pitää
+   elementin tekstivirrassa. */
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    color: #1e293b;
+    text-decoration: none;
+}
+
+.button--primary {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: #334155;
+    color: #ffffff;
+}

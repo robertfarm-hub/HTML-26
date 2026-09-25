@@ -1,0 +1,23 @@
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: yellowgreen;
+    flex-wrap: wrap;
+}
+
+.login {
+    margin-inline-start: auto;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.card {
+    background: #ddd;
+    padding: 1rem;
+    flex: 1 1 16rem;
+}
