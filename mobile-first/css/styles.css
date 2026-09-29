@@ -1,0 +1,83 @@
+/* 1. Perusasetukset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* 2. Container ja välistys */
+.container {
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+section,
+.hero,
+.site-footer {
+  padding-block: 3rem;
+}
+
+/* 3. Hero */
+.hero {
+  background: #1e1b4b;
+  color: #fff;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+  line-height: 1.2;
+  margin-block: 0 1rem;
+}
+
+.hero__text {
+  max-width: 45ch;
+  margin-inline: auto;
+  margin-block: 0 2rem;
+}
+
+/* 4. Kortit */
+.features {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.card__title {
+  margin-block-start: 0;
+}
+
+/* 5. Nappi ja CTA */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #7c3aed;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.cta {
+  background: #f3f4f6;
+  text-align: center;
+}
+
+/* 6. Breakpoint: kortit rinnakkain */
+@media (width >= 48rem) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
