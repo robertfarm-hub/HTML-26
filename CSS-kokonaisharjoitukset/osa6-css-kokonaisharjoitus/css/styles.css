@@ -223,3 +223,68 @@
     background-color: #334155;
     color: #ffffff;
 }
+
+@media (min-width 700px)
+{
+    .featured{
+        grid-column: span 2;
+    }
+}
+
+/* 3. Hero */
+.hero {
+  background: #1e1b4b;
+  color: #fff;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-block: 0 1rem;
+}
+
+.hero__text {
+  max-width: 45ch;
+  margin-inline: auto;
+  margin-block: 0 2rem;
+}
+
+/* 4. Kortit */
+.features {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.card__title {
+  margin-block-start: 0;
+}
+
+/* 5. Nappi ja CTA */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #7c3aed;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.cta {
+  background: #f3f4f6;
+  text-align: center;
+}
+
+/* 6. Breakpoint: kortit rinnakkain */
+@media (width >= 48rem) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
