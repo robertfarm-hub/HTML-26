@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luettava teksti verkossa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <h1>Luettava teksti verkossa: miksi typografia ratkaisee</h1>
+        <p><small>Julkaistu 1.10.2026 · Lukuaika noin 4 minuuttia</small></p>
+      </header>
+
+      <p>Suurin osa verkkosivujen sisällöstä on tekstiä, mutta silti tekstin luettavuus jää usein viimeiseksi asiaksi, jota sivua rakentaessa mietitään. Värit, kuvat ja animaatiot saavat huomion, vaikka lukija viettää suurimman osan ajastaan juuri kappaleiden parissa.</p>
+
+      <p>Hyvä typografia ei näy. Kun fonttikoko, riviväli ja rivin pituus ovat kohdallaan, lukija ei kiinnitä niihin huomiota lainkaan, vaan keskittyy sisältöön. Huono typografia sen sijaan väsyttää silmiä ja saa lukijan poistumaan sivulta nopeammin.</p>
+
+      <h2>Rivin pituus</h2>
+
+      <p>Liian pitkä rivi pakottaa silmän hyppäämään kauas palatessaan seuraavan rivin alkuun, jolloin paikka tekstissä katoaa helposti. Liian lyhyt rivi taas katkaisee lauseet niin usein, että lukurytmi kärsii.</p>
+
+      <p>Yleinen suositus on noin 45–75 merkkiä riviä kohden. CSS:ssä tämän voi toteuttaa yksiköllä <code>ch</code>, joka vastaa nollamerkin leveyttä valitussa fontissa. Esimerkiksi <code>max-width: 65ch</code> pitää tekstipalstan sopivan kapeana näytön koosta riippumatta.</p>
+
+      <h3>Entä mobiililaitteet?</h3>
+
+      <p>Kapealla näytöllä rivin pituus rajautuu luonnostaan näytön leveyteen, joten <code>max-width</code> vaikuttaa lähinnä isoilla näytöillä. Mobiilissa tärkeämpää on riittävä fonttikoko ja reunojen tyhjä tila.</p>
+
+      <h2>Riviväli ja fonttikoko</h2>
+
+      <p>Leipätekstin rivivälin kannattaa yleensä olla noin 1,5–1,7 kertaa fonttikoon verran. Otsikoissa riviväli voi olla tiiviimpi, koska ne ovat lyhyitä ja niiden fonttikoko on suurempi.</p>
+
+      <p>Kun fonttikoot määritellään muuttujiin yhteen paikkaan, koko sivun typografiaa on helppo säätää muuttamalla vain muutamaa arvoa. Tätä kutsutaan typografiseksi asteikoksi tai järjestelmäksi.</p>
+
+      <h3>Esimerkki typografisesta järjestelmästä</h3>
+
+      <p>Alla on yksinkertainen järjestelmä, jossa koot ja rivivälit on koottu <code>:root</code>-lohkoon. Elementit hakevat arvonsa <code>var()</code>-funktiolla:</p>
+
+<pre><code>:root {
+  --text-body: 1rem;
+  --text-h2: 2rem;
+  --leading-body: 1.65;
+}
+
+h2 {
+  font-size: var(--text-h2);
+}</code></pre>
+
+      <p>Jos haluat myöhemmin kasvattaa kaikkia h2-otsikoita, muutat vain arvon <code>--text-h2</code>, eikä sinun tarvitse etsiä jokaista otsikkoa erikseen.</p>
+
+      <h3>Lisää luettavaa</h3>
+
+      <p>Aiheesta kiinnostuneille hyvä lähtökohta on <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals">MDN:n opas tekstin muotoiluun</a>. Myös <a href="https://practicaltypography.com/">Practical Typography</a> käy perusteet läpi selkeästi.</p>
+
+      <p><small>Kirjoittaja on verkkokehityksen opiskelija.</small></p>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+:root {
+  --text-h2: 2rem;
+}
+
+.card {
+  min-height: 220px;
+}
+
+.card h2 {
+  font-size: var(--text-h2);
+}
+
+.card a {
+  text-decoration:underline;
+}

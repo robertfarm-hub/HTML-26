@@ -1,0 +1,56 @@
+:root {
+    --bg: #FDFFFC;
+    /* porcelain: sivun tausta */
+    --surface: #235789;
+    /* sininen: kortin pinta */
+    --on-surface: #FDFFFC;
+    /* teksti sinisen päällä */
+    --text: #020100;
+    /* musta: leipäteksti */
+    --accent: #F1D302;
+    /* keltainen: painikkeen tausta */
+    --on-accent: #020100;
+    /* teksti keltaisen päällä */
+    --danger: #C1292E;
+    /* punainen: virheet */
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.card {
+    background: var(--surface);
+    color: var(--on-surface);
+    width: 300px;
+    padding: 1rem;
+    border: 10px solid var(--accent);
+    border-radius: 10px;
+}
+
+.button {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.alert {
+    background: var(--bg);
+    border: 1px solid var(--danger);
+    color: var(--text);
+}
+
+.hero {
+    background-image: linear-gradient(rgb(0 0 0 / 0.7), rgb(0 0 0 / 0.1)), url(../images/aurinko.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 60vh;
+    color: var(--on-surface);
+    padding: 2rem;
+}
