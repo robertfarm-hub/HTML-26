@@ -1,0 +1,33 @@
+.card {
+    border: 5px solid #1a5fb4;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5), 30px 30px 30px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    background-color: #1a5fb4;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #144a8c;
+}
+
+.button:focus-visible {
+    outline: 3px solid #1a5fb4;
+    outline-offset: 2px;
+}
+
+.button:active {
+    background-color: #0f3566;
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
