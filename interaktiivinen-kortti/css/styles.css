@@ -1,33 +1,107 @@
 body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  padding: 2rem;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 2rem;
 }
 
 .card {
-  display: block;
-  max-width: 300px;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 0.2s ease;
+    display: block;
+    max-width: 300px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 .card:focus-visible {
-  outline: 3px solid #423e95;
-  outline-offset: 4px;
+    outline: 3px solid #423e95;
+    outline-offset: 4px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.5rem;
+    border: 4px solid #ccc;
+    border-top-color: #423e95;
+    border-radius: 50%;
+    animation: spin 1s linear infinite, pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.15;
+    }
+}
+
+.panel {
+    max-width: 300px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    animation: slide-in 0.6s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+}
+
+.notice {
+    max-width: 300px;
+    padding: 1rem 1.5rem;
+    border: 1px solid #423e95;
+    border-radius: 8px;
+    background: #eeedf7;
+    animation: attention 1.5s ease-out 0.6s 3;
+}
+
+@keyframes attention {
+    from {
+        box-shadow: 0 0 0 0 rgba(66, 62, 149, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 0 10px rgba(66, 62, 149, 0);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
+    .card {
+        transition: none;
+    }
+
+    .spinner {
+        animation: spin 2s linear infinite;
+    }
+
+    .panel {
+        animation: none;
+    }
+
+    .notice {
+        animation: none;
+    }
 }
