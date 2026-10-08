@@ -1,0 +1,131 @@
+:root {
+    --color-bg: #f1f5f9;
+    --color-surface: #ffffff;
+    --color-text: #1e293b;
+    --color-border: #94a3b8;
+    --color-accent: #6d28d9;
+    --radius: 6px;
+    --color-error: #dc2626;
+    --color-success: #16a34a;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+.field {
+    --field-border: var(--color-border);
+    --field-label: var(--color-text);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.field label {
+    color: var(--field-label);
+}
+
+input,
+button {
+    font: inherit;
+}
+
+.field input:not([type="checkbox"]) {
+    padding: 0.6rem 0.75rem;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--field-border);
+    border-radius: var(--radius);
+}
+
+.field:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--color-accent);
+}
+
+button {
+    padding: 0.7rem 1.25rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* Hover */
+.field input:not([type="checkbox"]):hover {
+    box-shadow: 0 0 0 1px var(--field-border);
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+/* Focus-visible */
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Teemat */
+.field--success,
+.field:where(:has(input:valid)) {
+    --field-border: var(--color-success);
+    --field-label: var(--color-success);
+}
+
+.field--error,
+.field:where(:has(input:user-invalid)) {
+    --field-border: var(--color-error);
+    --field-label: var(--color-error);
+}
+
+/* Disabled */
+input:disabled,
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (min-width: 48rem) {
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .field:has(input[type="checkbox"]),
+    button {
+        grid-column: 1 / -1;
+    }
+
+    button {
+        justify-self: start;
+    }
+}

@@ -1,0 +1,14 @@
+:root {
+  color-scheme: light dark;
+  --tausta: #ffffff;
+  --teksti: #111111;
+  --korostus: #0055cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tausta: #121212;
+    --teksti: #eeeeee;
+    --korostus: #66aaff;
+  }
+}

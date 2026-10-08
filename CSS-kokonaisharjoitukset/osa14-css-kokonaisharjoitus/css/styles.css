@@ -1,3 +1,288 @@
 /* CSS-kokonaisharjoitus, osa 14 */
 
 /* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
+:root {
+    /* taustat ja reunat */
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-inverse: #1e293b;
+    --color-border: #e2e8f0;
+
+    /* tekstit */
+    --color-text: #1e293b;
+    --color-text-muted: #475569;
+    --color-text-inverse: #ffffff;
+
+    /* brändi */
+    --color-primary: #7c3aed;
+    --color-primary-strong: #6d28d9;
+    --color-primary-subtle: #ede9fe;
+
+    /* välit */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --space-section: clamp(var(--space-lg), 1.25rem + 3.5vw, var(--space-xl));
+
+    /* typografia */
+    --font-size-hero: clamp(2rem, 1.6rem + 1.8vw, 3rem);
+    --font-size-lead: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+
+    /* pyöristykset */
+    --radius: 0.75rem;
+    --radius-pill: 999px;
+
+    /* varjot */
+    --shadow-card: 0 8px 24px rgb(15 23 42 / 0.08);
+    /* tilat */
+    --color-focus: #f59e0b;
+
+    /* liike */
+    --duration-fast: 200ms;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+main>* {
+    padding-inline: var(--space-md);
+}
+
+.skip-link {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    z-index: 10;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius);
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+    color: var(--color-text);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.hero {
+    padding-block: var(--space-section);
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+}
+
+.hero h1 {
+    margin: 0 0 var(--space-sm);
+    font-size: var(--font-size-hero);
+    line-height: 1.1;
+}
+
+.eyebrow {
+    margin: 0 0 var(--space-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hero__lead {
+    max-width: 48rem;
+    margin: 0 0 var(--space-lg);
+    font-size: var(--font-size-lead);
+}
+
+.button {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary-strong);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform var(--duration-fast) ease,
+        background var(--duration-fast) ease,
+        color var(--duration-fast) ease;
+}
+
+.button--primary {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+.content-section {
+    padding-block: var(--space-section);
+}
+
+.content-section h2 {
+    margin-top: 0;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-md);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+}
+
+.card--featured {
+    border-color: var(--color-primary);
+}
+
+.card__badge {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary-strong);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.card__title,
+.card__text {
+    margin: 0;
+}
+
+.card__text {
+    color: var(--color-text-muted);
+}
+
+.card .button {
+    margin-top: auto;
+}
+
+.help-button {
+    position: fixed;
+    right: var(--space-md);
+    bottom: var(--space-md);
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    font-size: 1.25rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+    transition: transform var(--duration-fast) ease, background var(--duration-fast) ease;
+}
+
+.site-footer {
+    padding: var(--space-lg) var(--space-md);
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer a {
+    color: var(--color-text-inverse);
+}
+
+.button:hover {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    transform: scale(1.05);
+}
+
+.button--primary:hover,
+.help-button:hover {
+    background: var(--color-primary-strong);
+}
+
+.nav-list a:hover {
+    color: var(--color-text);
+}
+
+.nav-list a[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.help-button:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0f172a;
+        --color-surface: #1e293b;
+        --color-surface-inverse: #020617;
+        --color-border: #334155;
+        --color-text: #e2e8f0;
+        --color-text-muted: #94a3b8;
+        --shadow-card: 0 8px 24px rgb(0 0 0 / 0.4);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .button,
+    .help-button {
+        transition: none;
+    }
+}
