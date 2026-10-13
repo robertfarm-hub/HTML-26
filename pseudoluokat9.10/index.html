@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osa 16 tehtävät</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Osa 16 tehtävät</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Painikejärjestelmä</h2>
+
+            <h3>Käytössä</h3>
+            <div class="button-row">
+                <button type="button" class="btn btn-primary">Tallenna</button>
+                <button type="button" class="btn btn-secondary">Peruuta</button>
+            </div>
+
+            <h3>Pois käytöstä</h3>
+            <div class="button-row">
+                <button type="button" class="btn btn-primary" disabled>Tallenna</button>
+                <button type="button" class="btn btn-secondary" disabled>Peruuta</button>
+            </div>
+        </section>
+        <section>
+            <h2>Lomakekortti</h2>
+            <form class="form-card">
+                <div class="field">
+                    <label for="nimi">Nimi (pakollinen)</label>
+                    <input type="text" id="nimi" name="nimi" required autocomplete="name" aria-describedby="nimi-ohje">
+                    <p class="hint" id="nimi-ohje">Kirjoita etu- ja sukunimesi.</p>
+                </div>
+
+                <div class="field">
+                    <label for="email">Sähköposti (pakollinen)</label>
+                    <input type="email" id="email" name="email" required autocomplete="email"
+                        aria-describedby="email-ohje">
+                    <p class="hint" id="email-ohje">Muoto: nimi@esimerkki.fi</p>
+                </div>
+
+                <div class="field">
+                    <label for="jasennumero">Jäsennumero</label>
+                    <input type="text" id="jasennumero" name="jasennumero" value="12345678" disabled>
+                </div>
+
+                <div class="field field-check">
+                    <input type="checkbox" id="uutiskirje" name="uutiskirje">
+                    <label for="uutiskirje">Haluan tilata uutiskirjeen</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Lähetä</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
