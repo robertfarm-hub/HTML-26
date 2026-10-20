@@ -1,0 +1,144 @@
+:root {
+    --color-bg: #07021B;
+    --color-surface: #11063F;
+    --color-border: #2C197D;
+    --color-text: #F2F0FA;
+    --color-muted: #C4BEDD;
+    --color-accent: #EFC613;
+    --color-accent-hover: #EFDF13;
+    --color-accent-text: #07021B;
+    --color-focus: #F2F0FA;
+
+    --radius: 12px;
+    --space: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.site-header {
+    padding: var(--space) calc(var(--space) * 1.5);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: calc(var(--space) * 1.5);
+    align-items: start;
+    padding: 0 calc(var(--space) * 1.5) calc(var(--space) * 1.5);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space);
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    container-type: inline-size;
+}
+
+.card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space) * 0.5);
+    padding: var(--space);
+}
+
+.card-title,
+.card-desc,
+.card-price {
+    margin: 0;
+}
+
+.card-title {
+    font-size: 1.1rem;
+}
+
+.card-desc {
+    color: var(--color-muted);
+}
+
+.card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.card-cta {
+    margin-top: auto;
+    padding: calc(var(--space) * 0.6) var(--space);
+    font: inherit;
+    font-weight: 600;
+    color: var(--color-accent-text);
+    background: var(--color-accent);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.card-cta:hover {
+  background: var(--color-accent-hover);
+}
+
+.card-cta:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ===== MEDIA QUERYT: VAIN SIVUN ASETTELU ===== */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@container (min-width: 420px) {
+  .card-inner {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+  }
+
+  .card-img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
