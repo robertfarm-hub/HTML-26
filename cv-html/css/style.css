@@ -1,0 +1,42 @@
+:root {
+  --paper: #F4F1EA;
+  --ink: #1A1A1A;
+  --muted: #6B6B6B;
+  --accent: #C8432B;
+}
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  column-gap: 24px;
+}
+
+header img {
+  grid-row: 1 / 4;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+
+  header img {
+    grid-row: auto;
+    width: 120px;
+    height: 120px;
+  }
+}
