@@ -27,6 +27,7 @@ header img {
   height: 160px;
   object-fit: cover;
   border-radius: 50%;
+  background: #E6E0D4;
 }
 
 @media (max-width: 600px) {
