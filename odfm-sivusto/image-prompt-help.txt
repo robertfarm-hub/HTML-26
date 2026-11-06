@@ -12,4 +12,4 @@ No text, no borders, no frame, no UI elements, no characters in the foreground.
 
 Scene: A series of enormous concentric stone ditches cut into the ground, seen from the side, each one spanned by a single massive arched stone bridge. The ditches are deep and dark.
 
-On the right-hand side stands one colossal horned figure. It is by far the largest shape in the image: its feet rest on the ground line and its horns nearly touch the top edge of the image, so it spans almost the full height. Its head is thrown far back, its mouth wide open, and its arms are flung out wide in a posture of open mockery and laughter. The rest of the scene is small beside it.
+On the right-hand side stands one colossal horned figure. It is by far the largest shape in the image: its feet rest on the ground line and its horns nearly touch the top edge of the image, so it spans almost the full height. Its head is thrown far back, its mouth wide open, and its arms are flung out wide in a posture of open mockery and laughter. The rest of the scene is small beside it. The image must be exactly four times wider than it is tall. Output size: 2508 x 627 pixels.
