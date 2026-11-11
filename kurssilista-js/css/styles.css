@@ -1,0 +1,35 @@
+:root {
+  --vari-aktiivinen: #2e7d32;
+  --vari-ei-aktiivinen: #9e9e9e;
+  --vari-kortti: #ffffff;
+  --vari-tausta: #f2f2f2;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--vari-tausta);
+  padding: 2rem;
+}
+
+/* Kortit ruudukkoon: niin monta saraketta kuin mahtuu, vähintään 200px leveitä */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+article {
+  background-color: var(--vari-kortti);
+  padding: 1rem;
+  border-left: 6px solid;
+}
+
+/* Tilaluokat: JavaScript lisää näistä toisen, CSS päättää ulkoasun */
+.active {
+  border-color: var(--vari-aktiivinen);
+}
+
+.inactive {
+  border-color: var(--vari-ei-aktiivinen);
+  opacity: 0.6;
+}
