@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktiivinen tuotelista</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <h1>Tuotelista</h1>
+
+  <label>Hae tuotetta <input id="haku" type="search"></label>
+
+  <section class="grid" id="tuotteet"></section>
+
+  <h2>Lisää tuote</h2>
+  <form id="lisaa">
+    <label>Nimi <input name="nimi" required></label>
+    <label>Hinta <input name="hinta" type="number" required></label>
+    <button type="submit">Lisää</button>
+  </form>
+
+  <p id="status" aria-live="polite"></p>
+</body>
+</html>

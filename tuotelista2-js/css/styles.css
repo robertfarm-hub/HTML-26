@@ -1,0 +1,38 @@
+:root {
+  --vari-tausta: #f2f2f2;
+  --vari-kortti: #ffffff;
+  --vari-teksti: #222222;
+  --vari-suosikki: #e0a800;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--vari-tausta);
+  color: var(--vari-teksti);
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+article {
+  background-color: var(--vari-kortti);
+  padding: 1rem;
+  border: 3px solid transparent;
+}
+
+/* Tila: JavaScript lisää tai poistaa luokan, CSS näyttää sen */
+.favorite {
+  border-color: var(--vari-suosikki);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+}
